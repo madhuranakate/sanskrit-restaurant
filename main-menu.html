@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu - Sanskrit Restaurant</title>
+    <meta name="description" content="Explore our authentic Indian main menu featuring traditional curries, biryanis, tandoor specialties and vegetarian dishes at Sanskrit Restaurant Newcastle.">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="assets/logo-black-text.png" alt="Sanskrit Restaurant" class="logo-img">
+                </a>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link active">Menus <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="main-menu.html">Main Menu</a>
+                        <a href="drinks-menu.html">Drinks</a>
+                        <a href="breakfast-menu.html">Breakfast</a>
+                        <a href="vegan-menu.html">Vegan</a>
+                        <a href="happy-hour-menu.html">Happy Hour</a>
+                        <a href="catering-menu.html">Catering</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="https://sanskritrestaurant.com/book-table" class="nav-link">Book Table</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://sanskritrestaurant.com" class="nav-link">Order</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-bg">
+            <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Main Menu">
+            <div class="page-header-overlay"></div>
+        </div>
+        <div class="page-header-content">
+            <h1>Main Menu</h1>
+            <p>Authentic Indian flavors from the heart of India</p>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <section class="menu-page">
+        <div class="container">
+            <!-- Menu Filters -->
+            <div class="menu-filters">
+                <button class="filter-btn active" data-filter="all">All Items</button>
+                <button class="filter-btn" data-filter="vegetarian">Vegetarian</button>
+                <button class="filter-btn" data-filter="vegan">Vegan</button>
+                <button class="filter-btn" data-filter="gluten-free">Gluten Free</button>
+                <button class="filter-btn" data-filter="spicy">Spicy</button>
+            </div>
+
+            <!-- Starters Section -->
+            <div class="menu-section">
+                <h2 class="section-title">Starters</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-categories="vegetarian">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Samosas">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3 class="menu-item-title">Vegetable Samosas</h3>
+                                </div>
+                                <span class="menu-item-price">£6.95</span>
+                            </div>
+                            <p class="menu-item-description">Crispy pastry parcels filled with spiced potatoes, peas, and aromatic herbs. Served with mint and tamarind chutneys.</p>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag vegetarian">Vegetarian</span>
+                                <span class="menu-tag">Popular</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-categories="">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Chicken Tikka">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3 class="menu-item-title">Chicken Tikka</h3>
+                                </div>
+                                <span class="menu-item-price">£8.95</span>
+                            </div>
+                            <p class="menu-item-description">Tender chicken pieces marinated in yogurt and spices, grilled to perfection in our traditional tandoor oven.</p>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag gluten-free">Gluten Free</span>
+                                <span class="menu-tag">Chef's Special</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-categories="vegetarian vegan">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1630408920286-cd99835aec50?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Onion Bhajis">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3 class="menu-item-title">Onion Bhajis</h3>
+                                </div>
+                                <span class="menu-item-price">£5.95</span>
+                            </div>
+                            <p class="menu-item-description">Golden crispy fritters made with sliced onions, gram flour, and aromatic spices. A classic Indian street food favorite.</p>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag vegan">Vegan</span>
+                                <span class="menu-tag vegetarian">Vegetarian</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-categories="spicy">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Lamb Seekh Kebab">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3 class="menu-item-title">Lamb Seekh Kebab</h3>
+                                </div>
+                                <span class="menu-item-price">£9.95</span>
+                            </div>
+                            <p class="menu-item-description">Minced lamb mixed with fresh herbs and spices, shaped around skewers and grilled in the tandoor until perfectly charred.</p>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag spicy">Spicy</span>
+                                <span class="menu-tag gluten-free">Gluten Free</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Courses Section -->
+            <div class="menu-section">
+                <h2 class="section-title">Main Courses</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-categories="">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Butter Chicken">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3 class="menu-item-title">Butter Chicken</h3>
+                                </div>
+                                <span class="menu-item-price">£14.95</span>
+                            </div>
+                            <p class="menu-item-description">Tender chicken in a rich, creamy tomato-based sauce with aromatic spices. Our signature dish that's loved by all.</p>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag">Signature Dish</span>
+                                <span class="menu-tag">Mild</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-categories="vegetarian">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Palak Paneer">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3 class="menu-item-title">Palak Paneer</h3>
+                                </div>
+                                <span class="menu-item-price">£12.95</span>
+                            </div>
+                            <p class="menu-item-description">Fresh spinach cooked with cottage cheese cubes in a creamy sauce, flavored with garlic, ginger, and aromatic spices.</p>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag vegetarian">Vegetarian</span>
+                                <span class="menu-tag gluten-free">Gluten Free</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-categories="spicy">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Lamb Vindaloo">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3 class="menu-item-title">Lamb Vindaloo</h3>
+                                </div>
+                                <span class="menu-item-price">£16.95</span>
+                            </div>
+                            <p class="menu-item-description">Traditional Goan curry with tender lamb in a fiery sauce made with vinegar, red chilies, and aromatic spices. Not for the faint-hearted!</p>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag spicy">Very Spicy</span>
+                                <span class="menu-tag gluten-free">Gluten Free</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-categories="vegan vegetarian">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Dal Tadka">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3 class="menu-item-title">Dal Tadka</h3>
+                                </div>
+                                <span class="menu-item-price">£10.95</span>
+                            </div>
+                            <p class="menu-item-description">Yellow lentils tempered with cumin, mustard seeds, curry leaves, and aromatic spices. A comfort food classic.</p>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag vegan">Vegan</span>
+                                <span class="menu-tag vegetarian">Vegetarian</span>
+                                <span class="menu-tag gluten-free">Gluten Free</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Biryani Section -->
+            <div class="menu-section">
+                <h2 class="section-title">Biryani</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-categories="">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1563379091339-03246963d29a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Chicken Biryani">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3 class="menu-item-title">Chicken Biryani</h3>
+                                </div>
+                                <span class="menu-item-price">£15.95</span>
+                            </div>
+                            <p class="menu-item-description">Fragrant basmati rice cooked with tender chicken pieces, saffron, and aromatic spices. Served with raita and curry sauce.</p>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag gluten-free">Gluten Free</span>
+                                <span class="menu-tag">Complete Meal</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-categories="vegetarian">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Vegetable Biryani">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3 class="menu-item-title">Vegetable Biryani</h3>
+                                </div>
+                                <span class="menu-item-price">£13.95</span>
+                            </div>
+                            <p class="menu-item-description">Aromatic basmati rice layered with mixed vegetables, saffron, and traditional spices. A vegetarian delight served with raita.</p>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag vegetarian">Vegetarian</span>
+                                <span class="menu-tag gluten-free">Gluten Free</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bread & Rice Section -->
+            <div class="menu-section">
+                <h2 class="section-title">Bread & Rice</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-categories="vegetarian">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1565299585323-38174c4a6471?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Garlic Naan">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3 class="menu-item-title">Garlic Naan</h3>
+                                </div>
+                                <span class="menu-item-price">£3.95</span>
+                            </div>
+                            <p class="menu-item-description">Soft, pillowy bread baked in our tandoor oven and topped with fresh garlic and coriander. Perfect for scooping up curries.</p>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag vegetarian">Vegetarian</span>
+                                <span class="menu-tag">Popular</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-categories="vegetarian vegan">
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1506629905607-53e103a40de4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Basmati Rice">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3 class="menu-item-title">Basmati Rice</h3>
+                                </div>
+                                <span class="menu-item-price">£3.50</span>
+                            </div>
+                            <p class="menu-item-description">Premium long-grain basmati rice, perfectly steamed and lightly seasoned. The ideal accompaniment to our curries.</p>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag vegan">Vegan</span>
+                                <span class="menu-tag vegetarian">Vegetarian</span>
+                                <span class="menu-tag gluten-free">Gluten Free</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Order?</h2>
+                <p>Experience these authentic flavors at Sanskrit Restaurant</p>
+                <div class="cta-buttons">
+                    <a href="https://sanskritrestaurant.com/book-table" class="btn btn-primary">Book a Table</a>
+                    <a href="https://sanskritrestaurant.com" class="btn btn-secondary">Order Online</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/logo-white-text.png" alt="Sanskrit Restaurant" class="footer-logo">
+                    <p>Experience authentic Indian flavours from the very soul of India in Newcastle upon Tyne.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/sanskritnewcastle" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/sanskritnewcastle" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="main-menu.html">Menu</a></li>
+                        <li><a href="https://sanskritrestaurant.com/book-table">Book Table</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Benton Park Rd, Newcastle upon Tyne NE7 7EE</p>
+                    <p><i class="fas fa-phone"></i> 0191 659 4072</p>
+                    <p><i class="fas fa-envelope"></i> admin@sanskritrestaurant.uk</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Opening Hours</h4>
+                    <p>Mon-Thu: 5:00 PM - 10:00 PM</p>
+                    <p>Fri-Sat: 5:00 PM - 11:00 PM</p>
+                    <p>Sunday: 5:00 PM - 9:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sanskrit Restaurant Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+    <script src="js/menu-filter.js"></script>
+</body>
+</html>
