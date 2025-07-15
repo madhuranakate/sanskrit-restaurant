@@ -5,16 +5,48 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const spiceButtons = document.querySelectorAll('.spice-btn');
 
-    // Initialize first tab as active
-    if (tabButtons.length > 0 && tabContents.length > 0) {
-        tabButtons[0].classList.add('active');
-        tabContents[0].classList.add('active');
+    // Check for hash in URL and switch to corresponding tab
+    function switchToTabFromHash() {
+        const hash = window.location.hash.replace('#', '');
+        if (hash) {
+            const targetButton = document.querySelector(`[data-tab="${hash}"]`);
+            const targetContent = document.getElementById(hash);
+            
+            if (targetButton && targetContent) {
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to target button and content
+                targetButton.classList.add('active');
+                targetContent.classList.add('active');
+                
+                // Reset filters when switching tabs
+                resetFilters();
+                return;
+            }
+        }
+        
+        // If no valid hash, initialize first tab as active
+        if (tabButtons.length > 0 && tabContents.length > 0) {
+            tabButtons[0].classList.add('active');
+            tabContents[0].classList.add('active');
+        }
     }
+
+    // Initialize tabs based on hash or default to first tab
+    switchToTabFromHash();
+
+    // Listen for hash changes (browser back/forward)
+    window.addEventListener('hashchange', switchToTabFromHash);
 
     // Tab switching functionality
     tabButtons.forEach(button => {
         button.addEventListener('click', function() {
             const targetTab = this.getAttribute('data-tab');
+            
+            // Update URL hash
+            window.location.hash = targetTab;
             
             // Remove active class from all buttons and contents
             tabButtons.forEach(btn => btn.classList.remove('active'));

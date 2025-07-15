@@ -25,7 +25,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="assets/logo-black-text.png" alt="Sanskrit Restaurant" class="logo-img">
+                <img src="assets/logo-white-text.png" alt="Sanskrit Restaurant" class="logo-img">
             </div>
             
             <ul class="nav-menu" id="nav-menu">
@@ -36,11 +36,11 @@
                     <a href="#" class="nav-link">Menus <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="menu-tabs.html">All Menus</a>
-                        <a href="main-menu.html">Main Menu</a>
-                        <a href="drinks-menu.html">Drinks</a>
-                        <a href="breakfast-menu.html">Breakfast</a>
-                        <a href="vegan-menu.html">Vegan</a>
-                        <a href="happy-hour-menu.html">Happy Hour</a>
+                        <a href="menu-tabs.html#main">Main Menu</a>
+                        <a href="menu-tabs.html#drinks">Drinks</a>
+                        <a href="menu-tabs.html#breakfast">Breakfast</a>
+                        <a href="menu-tabs.html#vegan">Vegan</a>
+                        <a href="menu-tabs.html#happy-hour">Happy Hour</a>
                         <a href="catering-menu.html">Catering</a>
                     </div>
                 </li>
@@ -99,87 +99,106 @@
         </div>
     </section>
 
-    <!-- Menu Slider Section -->
+    <!-- Menu Section -->
     <section class="menu-slider-section">
         <div class="container">
             <h2 class="section-title">Explore Our Menus</h2>
-            <div class="swiper menuSwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="menu-card" onclick="window.location.href='main-menu.html'">
-                            <div class="menu-card-image">
-                                <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Main Menu">
-                                <div class="menu-card-overlay"></div>
-                            </div>
-                            <div class="menu-card-content">
-                                <h3>Main Menu</h3>
-                                <p>Traditional curries, biryanis, and authentic Indian specialties</p>
-                            </div>
-                        </div>
+            <div class="menu-grid">
+                <div class="menu-card" onclick="window.location.href='menu-tabs.html#main'">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Authentic Indian Curry">
+                        <div class="menu-card-overlay"></div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="menu-card" onclick="window.location.href='drinks-menu.html'">
-                            <div class="menu-card-image">
-                                <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Drinks Menu">
-                                <div class="menu-card-overlay"></div>
-                            </div>
-                            <div class="menu-card-content">
-                                <h3>Drinks</h3>
-                                <p>Lassi, chai, wines, and refreshing beverages</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="menu-card" onclick="window.location.href='breakfast-menu.html'">
-                            <div class="menu-card-image">
-                                <img src="https://images.unsplash.com/photo-1630851628977-9b7c4bf62d17?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Breakfast Menu">
-                                <div class="menu-card-overlay"></div>
-                            </div>
-                            <div class="menu-card-content">
-                                <h3>Breakfast</h3>
-                                <p>Start your day with authentic Indian breakfast</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="menu-card" onclick="window.location.href='vegan-menu.html'">
-                            <div class="menu-card-image">
-                                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Vegan Menu">
-                                <div class="menu-card-overlay"></div>
-                            </div>
-                            <div class="menu-card-content">
-                                <h3>Vegan</h3>
-                                <p>Plant-based Indian delicacies full of flavor</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="menu-card" onclick="window.location.href='happy-hour-menu.html'">
-                            <div class="menu-card-image">
-                                <img src="https://images.unsplash.com/photo-1608490749506-90a019bbcc0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Happy Hour Menu">
-                                <div class="menu-card-overlay"></div>
-                            </div>
-                            <div class="menu-card-content">
-                                <h3>Happy Hour</h3>
-                                <p>Special offers on drinks and appetizers</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="menu-card" onclick="window.location.href='catering-menu.html'">
-                            <div class="menu-card-image">
-                                <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Catering Menu">
-                                <div class="menu-card-overlay"></div>
-                            </div>
-                            <div class="menu-card-content">
-                                <h3>Catering</h3>
-                                <p>Perfect for events and special occasions</p>
-                            </div>
+                    <div class="menu-card-content">
+                        <h3>Main Menu</h3>
+                        <p>Rich, aromatic curries, fragrant biryanis, and authentic Indian specialties prepared with traditional spices and fresh ingredients</p>
+                        <div class="menu-card-action">
+                            <a href="menu-tabs.html#main" class="menu-card-link">
+                                View Menu <i class="fas fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                
+                <div class="menu-card" onclick="window.location.href='menu-tabs.html#drinks'">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Drinks Menu">
+                        <div class="menu-card-overlay"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Drinks Menu</h3>
+                        <p>Lassi, traditional chai, wines, and refreshing beverages to complement your meal perfectly</p>
+                        <div class="menu-card-action">
+                            <a href="menu-tabs.html#drinks" class="menu-card-link">
+                                View Menu <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-card" onclick="window.location.href='menu-tabs.html#happy-hour'">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Happy Hour Menu">
+                        <div class="menu-card-overlay"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Happy Hour</h3>
+                        <p>An array of delicious appetizers and beverages served together for the perfect evening feast</p>
+                        <div class="menu-card-action">
+                            <a href="menu-tabs.html#happy-hour" class="menu-card-link">
+                                View Menu <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-card" onclick="window.location.href='menu-tabs.html#vegan'">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Vegan Menu">
+                        <div class="menu-card-overlay"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Vegan Menu</h3>
+                        <p>Plant-based Indian delicacies bursting with flavor and made with the freshest ingredients</p>
+                        <div class="menu-card-action">
+                            <a href="menu-tabs.html#vegan" class="menu-card-link">
+                                View Menu <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-card" onclick="window.location.href='menu-tabs.html#breakfast'">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="South Indian Breakfast - Dosa">
+                        <div class="menu-card-overlay"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>South Indian Breakfast</h3>
+                        <p>Crispy dosas, fluffy idlis, and authentic South Indian breakfast specialties served with fresh chutneys and sambar</p>
+                        <div class="menu-card-action">
+                            <a href="menu-tabs.html#breakfast" class="menu-card-link">
+                                View Menu <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-card" onclick="window.location.href='catering-menu.html'">
+                    <div class="menu-card-image">
+                        <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Catering Menu">
+                        <div class="menu-card-overlay"></div>
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Catering Menu</h3>
+                        <p>Perfect for events and special occasions with customizable options for every gathering</p>
+                        <div class="menu-card-action">
+                            <a href="catering-menu.html" class="menu-card-link">
+                                View Menu <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -218,54 +237,6 @@
         </div>
     </section>
 
-    <!-- Location & Hours Section -->
-    <section class="location-section">
-        <div class="container">
-            <div class="location-content">
-                <div class="location-info">
-                    <h2 class="section-title">Visit Us</h2>
-                    <div class="info-card">
-                        <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
-                        <p>Benton Park Rd<br>Newcastle upon Tyne NE7 7EE</p>
-                    </div>
-                    <div class="info-card">
-                        <h3><i class="fas fa-clock"></i> Opening Hours</h3>
-                        <div class="hours">
-                            <div class="hour-row">
-                                <span>Monday - Thursday:</span>
-                                <span>5:00 PM - 10:00 PM</span>
-                            </div>
-                            <div class="hour-row">
-                                <span>Friday - Saturday:</span>
-                                <span>5:00 PM - 11:00 PM</span>
-                            </div>
-                            <div class="hour-row">
-                                <span>Sunday:</span>
-                                <span>5:00 PM - 9:00 PM</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="info-card">
-                        <h3><i class="fas fa-phone"></i> Contact</h3>
-                        <p>0191 659 4072</p>
-                        <p>admin@sanskritrestaurant.uk</p>
-                    </div>
-                </div>
-                <div class="location-map">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2304.547445474947!2d-1.5234567!3d54.9857867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e70c8c9c7c7c7%3A0x1234567890abcdef!2sBenton%20Park%20Rd%2C%20Newcastle%20upon%20Tyne%20NE7%207EE%2C%20UK!5e0!3m2!1sen!2suk!4v1234567890123!5m2!1sen!2suk" 
-                        width="100%" 
-                        height="400" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -282,7 +253,7 @@
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="main-menu.html">Menu</a></li>
+                        <li><a href="menu-tabs.html">Menu</a></li>
                         <li><a href="https://sanskritrestaurant.com/book-table">Book Table</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>

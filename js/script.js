@@ -12,13 +12,20 @@ function initNavigation() {
     const navbar = document.getElementById('navbar');
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
+    const logo = document.querySelector('.nav-logo img');
 
     // Sticky navbar on scroll
     window.addEventListener('scroll', function() {
         if (window.scrollY > 100) {
             navbar.classList.add('scrolled');
+            if (logo) {
+                logo.src = 'assets/logo-black-text.png';
+            }
         } else {
             navbar.classList.remove('scrolled');
+            if (logo) {
+                logo.src = 'assets/logo-white-text.png';
+            }
         }
     });
 

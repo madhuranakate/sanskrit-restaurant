@@ -11,52 +11,46 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="assets/logo-white-text.png" alt="Sanskrit Restaurant">
+                <img src="assets/logo-white-text.png" alt="Sanskrit Restaurant" class="logo-img">
             </div>
-            <ul class="nav-menu">
+            
+            <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item">
                     <a href="index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Menu <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="nav-link">Menus <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="menu-tabs.html">All Menus</a>
-                        <a href="main-menu.html">Main Menu</a>
-                        <a href="drinks-menu.html">Drinks</a>
-                        <a href="breakfast-menu.html">Breakfast</a>
-                        <a href="happy-hour-menu.html">Happy Hour</a>
-                        <a href="vegan-menu.html">Vegan</a>
+                        <a href="menu-tabs.html#main">Main Menu</a>
+                        <a href="menu-tabs.html#drinks">Drinks</a>
+                        <a href="menu-tabs.html#breakfast">Breakfast</a>
+                        <a href="menu-tabs.html#vegan">Vegan</a>
+                        <a href="menu-tabs.html#happy-hour">Happy Hour</a>
+                        <a href="catering-menu.html">Catering</a>
                     </div>
+                </li>
+                <li class="nav-item">
+                    <a href="https://sanskritrestaurant.com/book-table" class="nav-link">Book Table</a>
                 </li>
                 <li class="nav-item">
                     <a href="about.html" class="nav-link">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="catering-menu.html" class="nav-link">Catering</a>
-                </li>
-                <li class="nav-item">
                     <a href="contact.html" class="nav-link">Contact</a>
                 </li>
             </ul>
-            <div class="hamburger">
+            
+            <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
     </nav>
-
-    <!-- Menu Page Header -->
-    <section class="page-header menu-header">
-        <div class="header-overlay"></div>
-        <div class="header-content">
-            <h1>Our Menu</h1>
-            <p>Authentic flavors crafted with passion</p>
-        </div>
-    </section>
 
     <!-- Menu Tabs -->
     <section class="menu-tabs-section">
@@ -117,7 +111,7 @@
                     <div class="menu-section">
                         <h2>Scrumptious Starters</h2>
                         <div class="menu-items">
-                            <div class="menu-item" data-dietary="vegetarian,vegan,gluten-free,dairy-free,nuts-free" data-spice="mild">
+                            <div class="menu-item" data-dietary="vegetarian,vegan,gluten-free,dairy-free" data-spice="mild">
                                 <div class="item-info">
                                     <h3>Onion Bhajji</h3>
                                     <p>Finely sliced onions cloaked in a golden, crunchy batter and fried to absolute perfection</p>
@@ -129,7 +123,7 @@
                                 </div>
                                 <span class="price">£5.00</span>
                             </div>
-                            <div class="menu-item" data-dietary="vegetarian,vegan,gluten-free,dairy-free,nuts-free" data-spice="mild">
+                            <div class="menu-item" data-dietary="vegetarian,vegan" data-spice="mild">
                                 <div class="item-info">
                                     <h3>Punjabi Veg Samosa</h3>
                                     <p>Two crispy pastries filled with a savoury mix of spiced potato and peas</p>
@@ -169,6 +163,81 @@
                                     </div>
                                 </div>
                                 <span class="price">£6.00</span>
+                            </div>
+                            <div class="menu-item" data-dietary="vegetarian,vegan,dairy-free" data-spice="medium">
+                                <div class="item-info">
+                                    <h3>Veg Manchurian</h3>
+                                    <p>Crispy vegetable spheres dance in a wok, coated with our zesty manchurian sauce</p>
+                                    <div class="dietary-tags">
+                                        <span class="tag vegetarian">Vegetarian</span>
+                                        <span class="tag vegan">Vegan</span>
+                                        <span class="tag spice-medium">Medium Heat</span>
+                                    </div>
+                                </div>
+                                <span class="price">£6.50</span>
+                            </div>
+                            <div class="menu-item" data-dietary="dairy-free" data-spice="mild">
+                                <div class="item-info">
+                                    <h3>Chicken Chaat</h3>
+                                    <p>Tender chicken pieces tossed with fresh veggies, aromatic spices, and a squeeze of zesty lemon</p>
+                                    <div class="dietary-tags">
+                                        <span class="tag dairy-free">Dairy Free</span>
+                                        <span class="tag spice-mild">Mild</span>
+                                    </div>
+                                </div>
+                                <span class="price">£4.95</span>
+                            </div>
+                            <div class="menu-item" data-dietary="dairy-free" data-spice="hot">
+                                <div class="item-info">
+                                    <h3>Chilli Chicken</h3>
+                                    <p>Tender chicken tossed in our house-made vibrant sauce, bursting with sweet, tangy & fiery flavors</p>
+                                    <div class="dietary-tags">
+                                        <span class="tag dairy-free">Dairy Free</span>
+                                        <span class="tag spice-hot">Hot</span>
+                                    </div>
+                                </div>
+                                <span class="price">£4.95</span>
+                            </div>
+                            <div class="menu-item" data-dietary="" data-spice="medium">
+                                <div class="item-info">
+                                    <h3>Chicken Pakora</h3>
+                                    <p>Succulent chicken pieces coated in a spiced gram flour batter, fried to golden perfection</p>
+                                    <div class="dietary-tags">
+                                        <span class="tag spice-medium">Medium Heat</span>
+                                    </div>
+                                </div>
+                                <span class="price">£4.50</span>
+                            </div>
+                            <div class="menu-item" data-dietary="dairy-free" data-spice="hot">
+                                <div class="item-info">
+                                    <h3>Chicken Lollipop</h3>
+                                    <p>Tender chicken wings transformed into finger-lickin' lollipops. Juicy & luscious on the inside. Rich & crispy batter on the outside</p>
+                                    <div class="dietary-tags">
+                                        <span class="tag dairy-free">Dairy Free</span>
+                                        <span class="tag spice-hot">Hot</span>
+                                    </div>
+                                </div>
+                                <span class="price">£7.50</span>
+                            </div>
+                            <div class="menu-item" data-dietary="gluten-free" data-spice="medium">
+                                <div class="item-info">
+                                    <h3>Mixed Kebab</h3>
+                                    <p>Chicken Tikka, Lamb Tikka, Seekh Kebab, Onion Bhajji. Served with salad and mint yoghurt</p>
+                                    <div class="dietary-tags">
+                                        <span class="tag gluten-free">Gluten Free</span>
+                                        <span class="tag spice-medium">Medium Heat</span>
+                                    </div>
+                                </div>
+                                <span class="price">£6.95</span>
+                            </div>
+                            <div class="menu-item" data-dietary="" data-spice="none">
+                                <div class="item-info">
+                                    <h3>Chips & Nuggets</h3>
+                                    <p>The ultimate comfort food combo - crispy golden fries paired with juicy, tender chicken nuggets</p>
+                                    <div class="dietary-tags">
+                                    </div>
+                                </div>
+                                <span class="price">£5.50</span>
                             </div>
                         </div>
                     </div>
@@ -252,69 +321,6 @@
                                 </div>
                                 <span class="price">£12.50</span>
                             </div>
-                            <div class="menu-item" data-dietary="dairy-free" data-spice="hot">
-                                <div class="item-info">
-                                    <h3>Chilli Chicken</h3>
-                                    <p>Tender chicken tossed in our house-made vibrant sauce, bursting with sweet, tangy & fiery flavors</p>
-                                    <div class="dietary-tags">
-                                        <span class="tag dairy-free">Dairy Free</span>
-                                        <span class="tag spice-hot">Hot</span>
-                                    </div>
-                                </div>
-                                <span class="price">£4.95</span>
-                            </div>
-                            <div class="menu-item" data-dietary="" data-spice="medium">
-                                <div class="item-info">
-                                    <h3>Chicken Pakora</h3>
-                                    <p>Succulent chicken pieces coated in a spiced gram flour batter, fried to golden perfection</p>
-                                    <div class="dietary-tags">
-                                        <span class="tag spice-medium">Medium Heat</span>
-                                    </div>
-                                </div>
-                                <span class="price">£6.00</span>
-                            </div>
-                            <div class="menu-item" data-dietary="dairy-free" data-spice="hot">
-                                <div class="item-info">
-                                    <h3>Chicken Lollipop</h3>
-                                    <p>Tender chicken wings transformed into finger-lickin' lollipops. Juicy & luscious on the inside. Rich & crispy batter on the outside</p>
-                                    <div class="dietary-tags">
-                                        <span class="tag dairy-free">Dairy Free</span>
-                                        <span class="tag spice-hot">Hot</span>
-                                    </div>
-                                </div>
-                                <span class="price">£7.50</span>
-                            </div>
-                            <div class="menu-item" data-dietary="dairy-free" data-spice="mild">
-                                <div class="item-info">
-                                    <h3>Chicken Chaat</h3>
-                                    <p>Tender chicken pieces tossed with fresh veggies, aromatic spices, and a squeeze of zesty lemon</p>
-                                    <div class="dietary-tags">
-                                        <span class="tag dairy-free">Dairy Free</span>
-                                        <span class="tag spice-mild">Mild</span>
-                                    </div>
-                                </div>
-                                <span class="price">£4.95</span>
-                            </div>
-                            <div class="menu-item" data-dietary="gluten-free" data-spice="medium">
-                                <div class="item-info">
-                                    <h3>Mixed Kebab</h3>
-                                    <p>Chicken Tikka, Lamb Tikka, Seekh Kebab, Onion Bhajji. Served with salad and mint yoghurt</p>
-                                    <div class="dietary-tags">
-                                        <span class="tag gluten-free">Gluten Free</span>
-                                        <span class="tag spice-medium">Medium Heat</span>
-                                    </div>
-                                </div>
-                                <span class="price">£6.95</span>
-                            </div>
-                            <div class="menu-item" data-dietary="" data-spice="none">
-                                <div class="item-info">
-                                    <h3>Chips & Nuggets</h3>
-                                    <p>The ultimate comfort food combo - crispy golden fries paired with juicy, tender chicken nuggets</p>
-                                    <div class="dietary-tags">
-                                    </div>
-                                </div>
-                                <span class="price">£5.50</span>
-                            </div>
                             <div class="menu-item" data-dietary="gluten-free" data-spice="medium">
                                 <div class="item-info">
                                     <h3>Tandoori Mixed Grill Platter</h3>
@@ -326,70 +332,42 @@
                                 </div>
                                 <span class="price">£13.95</span>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="menu-section">
-                        <h2>Vegetarian Starters</h2>
-                        <div class="menu-items">
-                            <div class="menu-item" data-dietary="vegetarian,gluten-free" data-spice="mild">
+                            <div class="menu-item" data-dietary="gluten-free,dairy-free" data-spice="medium">
                                 <div class="item-info">
-                                    <h3>Paneer Tikka</h3>
-                                    <p>Aromatic cottage cheese cubes marinated in spiced yogurt and grilled to perfection</p>
+                                    <h3>Tandoori King Prawn Main</h3>
+                                    <p>Royal flavours of succulent king prawns marinated in a blend of spices, and herbs, then grilled to perfection</p>
                                     <div class="dietary-tags">
-                                        <span class="tag vegetarian">Vegetarian</span>
-                                        <span class="tag gluten-free">Gluten Free</span>
-                                        <span class="tag spice-mild">Mild</span>
-                                    </div>
-                                </div>
-                                <span class="price">£7.50</span>
-                            </div>
-                            <div class="menu-item" data-dietary="vegan,gluten-free,dairy-free" data-spice="medium">
-                                <div class="item-info">
-                                    <h3>Aloo Tikki</h3>
-                                    <p>Crispy spiced potato patties served with aromatic chutneys</p>
-                                    <div class="dietary-tags">
-                                        <span class="tag vegan">Vegan</span>
                                         <span class="tag gluten-free">Gluten Free</span>
                                         <span class="tag dairy-free">Dairy Free</span>
                                         <span class="tag spice-medium">Medium Heat</span>
                                     </div>
                                 </div>
-                                <span class="price">£5.50</span>
+                                <span class="price">£12.95</span>
                             </div>
-                            <div class="menu-item" data-dietary="vegetarian" data-spice="mild">
+                            <div class="menu-item" data-dietary="vegetarian,gluten-free" data-spice="mild">
                                 <div class="item-info">
-                                    <h3>Vegetable Samosa</h3>
-                                    <p>Golden crispy pastry filled with spiced potatoes and vegetables</p>
+                                    <h3>Paneer Tikka Main</h3>
+                                    <p>Chunks of soft, fresh paneer marinated in yogurt and spices, then grilled to perfection</p>
                                     <div class="dietary-tags">
                                         <span class="tag vegetarian">Vegetarian</span>
+                                        <span class="tag gluten-free">Gluten Free</span>
                                         <span class="tag spice-mild">Mild</span>
                                     </div>
                                 </div>
-                                <span class="price">£4.50</span>
+                                <span class="price">£8.50</span>
                             </div>
-                            <div class="menu-item" data-dietary="vegan,dairy-free" data-spice="hot">
+                            <div class="menu-item" data-dietary="vegetarian,vegan,gluten-free,dairy-free" data-spice="medium">
                                 <div class="item-info">
-                                    <h3>Chilli Mushroom</h3>
-                                    <p>Fresh mushrooms tossed in spicy sauce with bell peppers and onions</p>
+                                    <h3>Grilled Potato Fry</h3>
+                                    <p>Potatoes expertly grilled for a crispy, flavourful exterior, seasoned with aromatic spices</p>
                                     <div class="dietary-tags">
+                                        <span class="tag vegetarian">Vegetarian</span>
                                         <span class="tag vegan">Vegan</span>
-                                        <span class="tag dairy-free">Dairy Free</span>
-                                        <span class="tag spice-hot">Hot</span>
+                                        <span class="tag gluten-free">Gluten Free</span>
+                                        <span class="tag spice-medium">Medium Heat</span>
                                     </div>
                                 </div>
                                 <span class="price">£6.00</span>
-                            </div>
-                            <div class="menu-item" data-dietary="vegetarian" data-spice="medium">
-                                <div class="item-info">
-                                    <h3>Onion Bhajji</h3>
-                                    <p>Crispy spiced onion fritters with gram flour batter</p>
-                                    <div class="dietary-tags">
-                                        <span class="tag vegetarian">Vegetarian</span>
-                                        <span class="tag spice-medium">Medium Heat</span>
-                                    </div>
-                                </div>
-                                <span class="price">£4.95</span>
                             </div>
                         </div>
                     </div>
@@ -486,6 +464,34 @@
                                     </div>
                                 </div>
                                 <span class="price">£11.00</span>
+                            </div>
+                            <div class="menu-item" data-dietary="vegetarian,vegan,gluten-free,dairy-free" data-spice="mild">
+                                <div class="item-info">
+                                    <h3>Tadka Daal</h3>
+                                    <p>Embrace the warmth of home-cooked comfort. Rich and soft lentils infused with aromatic spices, are tempered flawlessly</p>
+                                    <div class="dietary-tags">
+                                        <span class="tag vegetarian">Vegetarian</span>
+                                        <span class="tag vegan">Vegan</span>
+                                        <span class="tag gluten-free">Gluten Free</span>
+                                        <span class="tag dairy-free">Dairy Free</span>
+                                        <span class="tag spice-mild">Mild</span>
+                                    </div>
+                                </div>
+                                <span class="price">£7.95</span>
+                            </div>
+                            <div class="menu-item" data-dietary="vegetarian,vegan,gluten-free,dairy-free" data-spice="medium">
+                                <div class="item-info">
+                                    <h3>Mushroom Masala</h3>
+                                    <p>Succulent mushrooms meld seamlessly into a delectable earthy flavour, creating a rich gravy that's packed with a myriad of spices</p>
+                                    <div class="dietary-tags">
+                                        <span class="tag vegetarian">Vegetarian</span>
+                                        <span class="tag vegan">Vegan</span>
+                                        <span class="tag gluten-free">Gluten Free</span>
+                                        <span class="tag dairy-free">Dairy Free</span>
+                                        <span class="tag spice-medium">Medium Heat</span>
+                                    </div>
+                                </div>
+                                <span class="price">£9.95</span>
                             </div>
                         </div>
                     </div>
@@ -605,46 +611,42 @@
                                     </div>
                                 </div>
                                 <div class="combo-options">
-                                    <div class="combo-option" data-dietary="vegetarian,gluten-free,nuts" data-spice="mild">
+                                    <div class="combo-option" data-dietary="vegetarian,gluten-free" data-spice="mild">
                                         <div class="item-info">
                                             <h4>Vegetable Pasanda</h4>
                                             <div class="dietary-tags">
                                                 <span class="tag vegetarian">Vegetarian</span>
                                                 <span class="tag gluten-free">Gluten Free</span>
-                                                <span class="tag nuts">Contains Nuts</span>
                                                 <span class="tag spice-mild">Mild</span>
                                             </div>
                                         </div>
                                         <span class="price">£6.00</span>
                                     </div>
-                                    <div class="combo-option" data-dietary="gluten-free,nuts" data-spice="mild">
+                                    <div class="combo-option" data-dietary="gluten-free" data-spice="mild">
                                         <div class="item-info">
                                             <h4>Chicken Pasanda</h4>
                                             <div class="dietary-tags">
                                                 <span class="tag gluten-free">Gluten Free</span>
-                                                <span class="tag nuts">Contains Nuts</span>
                                                 <span class="tag spice-mild">Mild</span>
                                             </div>
                                         </div>
                                         <span class="price">£7.50</span>
                                     </div>
-                                    <div class="combo-option" data-dietary="gluten-free,nuts" data-spice="mild">
+                                    <div class="combo-option" data-dietary="gluten-free" data-spice="mild">
                                         <div class="item-info">
                                             <h4>Lamb Pasanda</h4>
                                             <div class="dietary-tags">
                                                 <span class="tag gluten-free">Gluten Free</span>
-                                                <span class="tag nuts">Contains Nuts</span>
                                                 <span class="tag spice-mild">Mild</span>
                                             </div>
                                         </div>
                                         <span class="price">£8.50</span>
                                     </div>
-                                    <div class="combo-option" data-dietary="gluten-free,nuts" data-spice="mild">
+                                    <div class="combo-option" data-dietary="gluten-free" data-spice="mild">
                                         <div class="item-info">
                                             <h4>King Prawn Pasanda</h4>
                                             <div class="dietary-tags">
                                                 <span class="tag gluten-free">Gluten Free</span>
-                                                <span class="tag nuts">Contains Nuts</span>
                                                 <span class="tag spice-mild">Mild</span>
                                             </div>
                                         </div>
@@ -716,7 +718,7 @@
                                     </div>
                                 </div>
                                 <div class="combo-options">
-                                    <div class="combo-option" data-dietary="vegetarian,vegan,gluten-free,dairy-free" data-spice="hot">
+                                    <div class="combo-option" data-dietary="vegetarian,vegan,gluten-free,dairy-free" data-spice="very-hot">
                                         <div class="item-info">
                                             <h4>Vegetable Vindaloo</h4>
                                             <div class="dietary-tags">
@@ -724,40 +726,40 @@
                                                 <span class="tag vegan">Vegan</span>
                                                 <span class="tag gluten-free">Gluten Free</span>
                                                 <span class="tag dairy-free">Dairy Free</span>
-                                                <span class="tag spice-hot">Hot</span>
+                                                <span class="tag spice-very-hot">Very Hot</span>
                                             </div>
                                         </div>
                                         <span class="price">£6.00</span>
                                     </div>
-                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="hot">
+                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="very-hot">
                                         <div class="item-info">
                                             <h4>Chicken Vindaloo</h4>
                                             <div class="dietary-tags">
                                                 <span class="tag gluten-free">Gluten Free</span>
                                                 <span class="tag dairy-free">Dairy Free</span>
-                                                <span class="tag spice-hot">Hot</span>
+                                                <span class="tag spice-very-hot">Very Hot</span>
                                             </div>
                                         </div>
                                         <span class="price">£7.50</span>
                                     </div>
-                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="hot">
+                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="very-hot">
                                         <div class="item-info">
                                             <h4>Lamb Vindaloo</h4>
                                             <div class="dietary-tags">
                                                 <span class="tag gluten-free">Gluten Free</span>
                                                 <span class="tag dairy-free">Dairy Free</span>
-                                                <span class="tag spice-hot">Hot</span>
+                                                <span class="tag spice-very-hot">Very Hot</span>
                                             </div>
                                         </div>
                                         <span class="price">£8.50</span>
                                     </div>
-                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="hot">
+                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="very-hot">
                                         <div class="item-info">
                                             <h4>King Prawn Vindaloo</h4>
                                             <div class="dietary-tags">
                                                 <span class="tag gluten-free">Gluten Free</span>
                                                 <span class="tag dairy-free">Dairy Free</span>
-                                                <span class="tag spice-hot">Hot</span>
+                                                <span class="tag spice-very-hot">Very Hot</span>
                                             </div>
                                         </div>
                                         <span class="price">£12.00</span>
@@ -828,7 +830,7 @@
                                     </div>
                                 </div>
                                 <div class="combo-options">
-                                    <div class="combo-option" data-dietary="vegetarian,vegan,gluten-free,dairy-free" data-spice="medium">
+                                    <div class="combo-option" data-dietary="vegetarian,vegan,gluten-free,dairy-free" data-spice="hot">
                                         <div class="item-info">
                                             <h4>Vegetable Jalfrezi</h4>
                                             <div class="dietary-tags">
@@ -836,40 +838,40 @@
                                                 <span class="tag vegan">Vegan</span>
                                                 <span class="tag gluten-free">Gluten Free</span>
                                                 <span class="tag dairy-free">Dairy Free</span>
-                                                <span class="tag spice-medium">Medium Heat</span>
+                                                <span class="tag spice-hot">Hot</span>
                                             </div>
                                         </div>
                                         <span class="price">£6.00</span>
                                     </div>
-                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="medium">
+                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="hot">
                                         <div class="item-info">
                                             <h4>Chicken Jalfrezi</h4>
                                             <div class="dietary-tags">
                                                 <span class="tag gluten-free">Gluten Free</span>
                                                 <span class="tag dairy-free">Dairy Free</span>
-                                                <span class="tag spice-medium">Medium Heat</span>
+                                                <span class="tag spice-hot">Hot</span>
                                             </div>
                                         </div>
                                         <span class="price">£7.50</span>
                                     </div>
-                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="medium">
+                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="hot">
                                         <div class="item-info">
                                             <h4>Lamb Jalfrezi</h4>
                                             <div class="dietary-tags">
                                                 <span class="tag gluten-free">Gluten Free</span>
                                                 <span class="tag dairy-free">Dairy Free</span>
-                                                <span class="tag spice-medium">Medium Heat</span>
+                                                <span class="tag spice-hot">Hot</span>
                                             </div>
                                         </div>
                                         <span class="price">£8.50</span>
                                     </div>
-                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="medium">
+                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="hot">
                                         <div class="item-info">
                                             <h4>King Prawn Jalfrezi</h4>
                                             <div class="dietary-tags">
                                                 <span class="tag gluten-free">Gluten Free</span>
                                                 <span class="tag dairy-free">Dairy Free</span>
-                                                <span class="tag spice-medium">Medium Heat</span>
+                                                <span class="tag spice-hot">Hot</span>
                                             </div>
                                         </div>
                                         <span class="price">£12.00</span>
@@ -1268,6 +1270,174 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="menu-item combo-parent">
+                                <div class="combo-header">
+                                    <div class="item-info">
+                                        <h3>Dansak</h3>
+                                        <p>Sweet and sour curry with lentils, pineapple and aromatic spices</p>
+                                    </div>
+                                </div>
+                                <div class="combo-options">
+                                    <div class="combo-option" data-dietary="vegetarian,vegan,gluten-free,dairy-free" data-spice="hot">
+                                        <div class="item-info">
+                                            <h4>Vegetable Dansak</h4>
+                                            <div class="dietary-tags">
+                                                <span class="tag vegetarian">Vegetarian</span>
+                                                <span class="tag vegan">Vegan</span>
+                                                <span class="tag gluten-free">Gluten Free</span>
+                                                <span class="tag dairy-free">Dairy Free</span>
+                                                <span class="tag spice-hot">Hot</span>
+                                            </div>
+                                        </div>
+                                        <span class="price">£6.00</span>
+                                    </div>
+                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="hot">
+                                        <div class="item-info">
+                                            <h4>Chicken Dansak</h4>
+                                            <div class="dietary-tags">
+                                                <span class="tag gluten-free">Gluten Free</span>
+                                                <span class="tag dairy-free">Dairy Free</span>
+                                                <span class="tag spice-hot">Hot</span>
+                                            </div>
+                                        </div>
+                                        <span class="price">£7.50</span>
+                                    </div>
+                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="hot">
+                                        <div class="item-info">
+                                            <h4>Lamb Dansak</h4>
+                                            <div class="dietary-tags">
+                                                <span class="tag gluten-free">Gluten Free</span>
+                                                <span class="tag dairy-free">Dairy Free</span>
+                                                <span class="tag spice-hot">Hot</span>
+                                            </div>
+                                        </div>
+                                        <span class="price">£8.50</span>
+                                    </div>
+                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="hot">
+                                        <div class="item-info">
+                                            <h4>King Prawn Dansak</h4>
+                                            <div class="dietary-tags">
+                                                <span class="tag gluten-free">Gluten Free</span>
+                                                <span class="tag dairy-free">Dairy Free</span>
+                                                <span class="tag spice-hot">Hot</span>
+                                            </div>
+                                        </div>
+                                        <span class="price">£12.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-item combo-parent">
+                                <div class="combo-header">
+                                    <div class="item-info">
+                                        <h3>Pathia</h3>
+                                        <p>Hot, sweet and sour curry with tomatoes and aromatic spices</p>
+                                    </div>
+                                </div>
+                                <div class="combo-options">
+                                    <div class="combo-option" data-dietary="vegetarian,vegan,gluten-free,dairy-free" data-spice="hot">
+                                        <div class="item-info">
+                                            <h4>Vegetable Pathia</h4>
+                                            <div class="dietary-tags">
+                                                <span class="tag vegetarian">Vegetarian</span>
+                                                <span class="tag vegan">Vegan</span>
+                                                <span class="tag gluten-free">Gluten Free</span>
+                                                <span class="tag dairy-free">Dairy Free</span>
+                                                <span class="tag spice-hot">Hot</span>
+                                            </div>
+                                        </div>
+                                        <span class="price">£6.00</span>
+                                    </div>
+                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="hot">
+                                        <div class="item-info">
+                                            <h4>Chicken Pathia</h4>
+                                            <div class="dietary-tags">
+                                                <span class="tag gluten-free">Gluten Free</span>
+                                                <span class="tag dairy-free">Dairy Free</span>
+                                                <span class="tag spice-hot">Hot</span>
+                                            </div>
+                                        </div>
+                                        <span class="price">£7.50</span>
+                                    </div>
+                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="hot">
+                                        <div class="item-info">
+                                            <h4>Lamb Pathia</h4>
+                                            <div class="dietary-tags">
+                                                <span class="tag gluten-free">Gluten Free</span>
+                                                <span class="tag dairy-free">Dairy Free</span>
+                                                <span class="tag spice-hot">Hot</span>
+                                            </div>
+                                        </div>
+                                        <span class="price">£8.50</span>
+                                    </div>
+                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="hot">
+                                        <div class="item-info">
+                                            <h4>King Prawn Pathia</h4>
+                                            <div class="dietary-tags">
+                                                <span class="tag gluten-free">Gluten Free</span>
+                                                <span class="tag dairy-free">Dairy Free</span>
+                                                <span class="tag spice-hot">Hot</span>
+                                            </div>
+                                        </div>
+                                        <span class="price">£12.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="menu-item combo-parent">
+                                <div class="combo-header">
+                                    <div class="item-info">
+                                        <h3>South Indian Garlic Chilli</h3>
+                                        <p>Fiery South Indian style curry with fresh garlic, chilli and aromatic spices</p>
+                                    </div>
+                                </div>
+                                <div class="combo-options">
+                                    <div class="combo-option" data-dietary="vegetarian,vegan,gluten-free,dairy-free" data-spice="hot">
+                                        <div class="item-info">
+                                            <h4>Vegetable South Indian Garlic Chilli</h4>
+                                            <div class="dietary-tags">
+                                                <span class="tag vegetarian">Vegetarian</span>
+                                                <span class="tag vegan">Vegan</span>
+                                                <span class="tag gluten-free">Gluten Free</span>
+                                                <span class="tag dairy-free">Dairy Free</span>
+                                                <span class="tag spice-hot">Hot</span>
+                                            </div>
+                                        </div>
+                                        <span class="price">£6.00</span>
+                                    </div>
+                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="hot">
+                                        <div class="item-info">
+                                            <h4>Chicken South Indian Garlic Chilli</h4>
+                                            <div class="dietary-tags">
+                                                <span class="tag gluten-free">Gluten Free</span>
+                                                <span class="tag dairy-free">Dairy Free</span>
+                                                <span class="tag spice-hot">Hot</span>
+                                            </div>
+                                        </div>
+                                        <span class="price">£7.50</span>
+                                    </div>
+                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="hot">
+                                        <div class="item-info">
+                                            <h4>Lamb South Indian Garlic Chilli</h4>
+                                            <div class="dietary-tags">
+                                                <span class="tag gluten-free">Gluten Free</span>
+                                                <span class="tag dairy-free">Dairy Free</span>
+                                                <span class="tag spice-hot">Hot</span>
+                                            </div>
+                                        </div>
+                                        <span class="price">£8.50</span>
+                                    </div>
+                                    <div class="combo-option" data-dietary="gluten-free,dairy-free" data-spice="hot">
+                                        <div class="item-info">
+                                            <h4>King Prawn South Indian Garlic Chilli</h4>
+                                            <div class="dietary-tags">
+                                                <span class="tag gluten-free">Gluten Free</span>
+                                                <span class="tag dairy-free">Dairy Free</span>
+                                                <span class="tag spice-hot">Hot</span>
+                                            </div>
+                                        </div>
+                                        <span class="price">£12.00</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -1374,13 +1544,12 @@
                                 </div>
                                 <span class="price">£3.50</span>
                             </div>
-                            <div class="menu-item" data-dietary="vegetarian,nuts" data-spice="none">
+                            <div class="menu-item" data-dietary="vegetarian" data-spice="none">
                                 <div class="item-info">
                                     <h3>Peshawari Naan</h3>
                                     <p>Sweet naan filled with coconut, almonds and sultanas</p>
                                     <div class="dietary-tags">
                                         <span class="tag vegetarian">Vegetarian</span>
-                                        <span class="tag nuts">Contains Nuts</span>
                                     </div>
                                 </div>
                                 <span class="price">£3.50</span>
@@ -1449,13 +1618,12 @@
                                 </div>
                                 <span class="price">£4.90</span>
                             </div>
-                            <div class="menu-item" data-dietary="vegetarian,nuts" data-spice="none">
+                            <div class="menu-item" data-dietary="vegetarian" data-spice="none">
                                 <div class="item-info">
                                     <h3>Bread Basket</h3>
                                     <p>1 tandoor roti, 1 peshawari naan, 1 garlic naan</p>
                                     <div class="dietary-tags">
                                         <span class="tag vegetarian">Vegetarian</span>
-                                        <span class="tag nuts">Contains Nuts</span>
                                     </div>
                                 </div>
                                 <span class="price">£7.95</span>
@@ -1617,20 +1785,6 @@
                                     </div>
                                 </div>
                                 <span class="price">£4.95</span>
-                            </div>
-                            <div class="menu-item" data-dietary="vegetarian,vegan,gluten-free,dairy-free" data-spice="mild">
-                                <div class="item-info">
-                                    <h3>Tadka Daal</h3>
-                                    <p>Embrace the warmth of home-cooked comfort. Rich and soft lentils infused with aromatic spices, are tempered flawlessly</p>
-                                    <div class="dietary-tags">
-                                        <span class="tag vegetarian">Vegetarian</span>
-                                        <span class="tag vegan">Vegan</span>
-                                        <span class="tag gluten-free">Gluten Free</span>
-                                        <span class="tag dairy-free">Dairy Free</span>
-                                        <span class="tag spice-mild">Mild</span>
-                                    </div>
-                                </div>
-                                <span class="price">£7.95</span>
                             </div>
                             <div class="menu-item" data-dietary="vegetarian,vegan,gluten-free,dairy-free" data-spice="mild">
                                 <div class="item-info">
@@ -2736,13 +2890,6 @@
                                     <p>Embrace the warmth of home-cooked comfort. Rich and soft lentils infused with aromatic spices, are tempered flawlessly</p>
                                 </div>
                                 <span class="price">£7.95</span>
-                            </div>
-                            <div class="menu-item">
-                                <div class="item-info">
-                                    <h3>Mushroom Masala</h3>
-                                    <p>Succulent mushrooms meld seamlessly into a delectable earthy flavour, creating a rich gravy that's packed with a myriad of spices</p>
-                                </div>
-                                <span class="price">£9.95</span>
                             </div>
                             <div class="menu-item">
                                 <div class="item-info">

@@ -1165,8 +1165,16 @@
 }
 
 /* Menu Tabs Styles */
+/* Override navbar for menu pages - start with dark background since no hero image */
+body .navbar {
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
 .menu-tabs-section {
-    padding: 4rem 0;
+    padding: 7rem 0 4rem 0;
     background: #fafafa;
 }
 
