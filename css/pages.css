@@ -147,16 +147,10 @@
 }
 
 .value-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px;
-    height: 80px;
-    background: var(--gold-gradient);
-    border-radius: 50%;
+    display: inline-block;
     margin-bottom: 1.5rem;
-    color: var(--secondary-color);
-    font-size: 2rem;
+    color: var(--primary-color);
+    font-size: 2.5rem;
 }
 
 .value-card h3 {
@@ -306,8 +300,8 @@
     gap: 2rem;
 }
 
-/* Contact Page Styles */
-.contact-content {
+/* Locations Page Styles */
+.locations-content {
     padding: 6rem 0;
 }
 
@@ -636,6 +630,252 @@
 
 .social-link i {
     font-size: 1.5rem;
+}
+
+/* Full Width Map with Sanskrit-style Overlay */
+.locations-section {
+    position: relative;
+    width: 100%;
+    margin: 4rem 0;
+}
+
+.map-container-fullwidth {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+.map-container-fullwidth iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Hide Google place cards and info windows */
+.map-container-fullwidth iframe {
+    pointer-events: auto;
+}
+
+.map-container-fullwidth::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 200px;
+    background: transparent;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Additional CSS to hide Google's default elements */
+.gm-style .place-card-large,
+.gm-style .place-card,
+.gm-style .gm-style-iw,
+.gm-style .gm-style-iw-c,
+.gm-style .gm-style-iw-d {
+    display: none !important;
+}
+
+/* Sanskrit-style Location Overlay */
+.location-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 320px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+.overlay-content {
+    padding: 20px;
+}
+
+.restaurant-header h3 {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.3;
+}
+
+.status-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.open-indicator {
+    width: 8px;
+    height: 8px;
+    background-color: #4caf50;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.status-text {
+    margin: 0;
+    font-size: 14px;
+    color: #666666;
+    font-weight: 400;
+}
+
+.address-section {
+    margin-bottom: 12px;
+}
+
+.address-text {
+    margin: 0;
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.4;
+}
+
+.phone-section {
+    margin-bottom: 20px;
+}
+
+.phone-text {
+    margin: 0;
+    font-size: 14px;
+    color: #666666;
+}
+
+.phone-text a {
+    color: #1976d2;
+    text-decoration: none;
+}
+
+.phone-text a:hover {
+    text-decoration: underline;
+}
+
+.hours-sections {
+    margin-bottom: 20px;
+}
+
+.hours-group {
+    margin-bottom: 16px;
+}
+
+.hours-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.hours-list p {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.3;
+}
+
+.hours-list p:last-child {
+    margin-bottom: 0;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 12px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.contact-button {
+    display: flex;
+}
+
+.contact-btn {
+    display: inline-block;
+    background-color: #1976d2;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #1565c0;
+    color: #ffffff;
+}
+
+.directions-link a {
+    color: #1976d2;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.directions-link a:hover {
+    text-decoration: underline;
+}
+
+/* Remove map controls styling */
+.map-container-fullwidth iframe {
+    pointer-events: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .location-overlay {
+        position: static;
+        width: auto;
+        margin: 1rem;
+        margin-top: -100px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
+    
+    .overlay-content {
+        padding: 16px;
+    }
+    
+    .restaurant-header h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-container-fullwidth {
+        height: 400px;
+    }
+    
+    .location-overlay {
+        margin: 0.5rem;
+        margin-top: -80px;
+    }
+    
+    .overlay-content {
+        padding: 14px;
+    }
+    
+    .restaurant-header h3 {
+        font-size: 15px;
+    }
+}
+
+.contact-form-section {
+    background: var(--accent-color);
+    padding: 4rem 0;
+    margin-top: 4rem;
+}
+
+.contact-form-section .container {
+    max-width: 800px;
 }
 
 /* Menu Page Styles */
@@ -1467,7 +1707,15 @@ body .navbar {
 
 .menu-items {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .menu-items {
+        grid-template-columns: 1fr;
+    }
 }
 
 .menu-item {
@@ -1601,6 +1849,22 @@ body .navbar {
     border-left: 4px solid #d4af37;
 }
 
+/* Disable hover effects for Happy Hour "What's Included" sections */
+#happy-hour .menu-item:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: #e9ecef;
+}
+
+#happy-hour .menu-item:hover::before {
+    transform: scaleY(0);
+}
+
+/* Hide filter section when Happy Hour tab is active */
+.tabs-container:has(#happy-hour.active) .filter-section {
+    display: none;
+}
+
 /* Tab Responsive Design */
 @media (max-width: 768px) {
     .tab-buttons {
@@ -1660,5 +1924,213 @@ body .navbar {
     .menu-section h2 {
         font-size: 1.6rem;
         margin-bottom: 1.5rem;
+    }
+}
+
+/* Sanskrit-style Locations Section */
+.css-z13hx0 {
+    width: 100%;
+    margin: 40px 0;
+}
+
+.MuiGrid-root.css-cz3wig {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.MuiTypography-h2Display.css-we4x09 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.locations-widget-subtitle.css-trdk9e {
+    font-size: 1rem;
+    color: var(--text-muted);
+}
+
+.MuiPaper-root.css-nd3vzh {
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: white;
+}
+
+.MuiGrid-container.css-1d3bbye {
+    width: 100%;
+}
+
+.css-dg606x {
+    width: 100%;
+}
+
+.css-308w4m {
+    width: 100%;
+    height: 600px;
+    position: relative;
+}
+
+.sc-Nxspf.cfbVZG {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px 12px 0 0;
+}
+
+.sc-Nxspf.cfbVZG iframe {
+    border-radius: 12px 12px 0 0;
+}
+
+/* Store Card Overlay */
+.locations-widget-store-card-71379.css-daue4x {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    max-width: 350px;
+    z-index: 10;
+}
+
+.MuiPaper-root.css-srj5sf {
+    background: #f5f5f5;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.MuiTypography-h3xs.css-yf2ue9 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.css-qp72mu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.css-863332 {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+}
+
+.MuiTypography-body2.css-jqs2rm {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.css-h2umcw {
+    margin-bottom: 12px;
+}
+
+.MuiTypography-body2.css-7e42dd {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    margin: 4px 0;
+    line-height: 1.4;
+}
+
+.css-p20afs {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.css-p20afs:hover {
+    text-decoration: underline;
+}
+
+.css-1u7e1fh {
+    margin: 16px 0;
+}
+
+.MuiTypography-body2Medium.css-nxp1i0 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.css-1efryfc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    gap: 16px;
+}
+
+.css-56d341 {
+    flex: 1;
+}
+
+.css-cupmza {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.css-cupmza:hover {
+    background-color: var(--primary-dark);
+}
+
+.MuiTypography-button.css-i0ct {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.MuiTypography-finePrint1.css-pcw9wj {
+    flex: 1;
+    text-align: right;
+}
+
+.css-1vl7mwo {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.css-1vl7mwo:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .locations-widget-store-card-71379.css-daue4x {
+        position: static;
+        max-width: 100%;
+        margin: 20px;
+    }
+    
+    .css-308w4m {
+        height: 300px;
+    }
+    
+    .MuiTypography-h2Display.css-we4x09 {
+        font-size: 2rem;
+    }
+    
+    .css-1efryfc {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .MuiTypography-finePrint1.css-pcw9wj {
+        text-align: center;
     }
 }

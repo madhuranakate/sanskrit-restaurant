@@ -5,6 +5,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const spiceButtons = document.querySelectorAll('.spice-btn');
 
+    // Filter functionality variables
+    let activeFilters = new Set(['all']);
+    let activeSpiceFilter = null;
+
+    // Function to toggle filter section visibility
+    function toggleFilterVisibility(activeTab) {
+        const filterSection = document.querySelector('.filter-section');
+        if (filterSection) {
+            if (activeTab === 'happy-hour') {
+                filterSection.style.display = 'none';
+            } else {
+                filterSection.style.display = 'block';
+            }
+        }
+    }
+
     // Check for hash in URL and switch to corresponding tab
     function switchToTabFromHash() {
         const hash = window.location.hash.replace('#', '');
@@ -23,6 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Reset filters when switching tabs
                 resetFilters();
+                
+                // Hide filter section for Happy Hour tab
+                toggleFilterVisibility(hash);
                 return;
             }
         }
@@ -31,6 +50,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (tabButtons.length > 0 && tabContents.length > 0) {
             tabButtons[0].classList.add('active');
             tabContents[0].classList.add('active');
+            
+            // Set initial filter visibility
+            const firstTabId = tabContents[0].id;
+            toggleFilterVisibility(firstTabId);
         }
     }
 
@@ -40,20 +63,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Listen for hash changes (browser back/forward)
     window.addEventListener('hashchange', switchToTabFromHash);
 
-    // Tab switching functionality
-    tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const targetTab = this.getAttribute('data-tab');
-            
-            // Update URL hash
-            window.location.hash = targetTab;
-            
-            // Remove active class from all buttons and contents
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
-            
-            // Add active class to clicked button
-            this.classList.add('active');
+    // Tab switching functionality - only if tab buttons exist
+    if (tabButtons.length > 0) {
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const targetTab = this.getAttribute('data-tab');
+                
+                // Update URL hash
+                window.location.hash = targetTab;
+                
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
             
             // Show corresponding tab content
             const targetContent = document.getElementById(targetTab);
@@ -62,27 +86,29 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             // Reset filters when switching tabs
-            resetFilters();
+            resetFilters();                // Hide filter section for Happy Hour tab
+                toggleFilterVisibility(targetTab);
+            });
         });
-    });
-
-    // Filter functionality
-    let activeFilters = new Set(['all']);
-    let activeSpiceFilter = null;
+    }
 
     function resetFilters() {
         activeFilters = new Set(['all']);
         activeSpiceFilter = null;
         
-        // Reset filter button states
-        filterButtons.forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.dataset.filter === 'all') {
-                btn.classList.add('active');
-            }
-        });
+        // Reset filter button states - only if they exist
+        if (filterButtons.length > 0) {
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.filter === 'all') {
+                    btn.classList.add('active');
+                }
+            });
+        }
         
-        spiceButtons.forEach(btn => btn.classList.remove('active'));
+        if (spiceButtons.length > 0) {
+            spiceButtons.forEach(btn => btn.classList.remove('active'));
+        }
         
         // Show all items
         showAllItems();
@@ -186,59 +212,64 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Dietary filter button events
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const filter = this.dataset.filter;
-            
-            if (filter === 'all') {
-                // Reset to show all
-                activeFilters = new Set(['all']);
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-            } else {
-                // Toggle specific filter
-                if (activeFilters.has(filter)) {
-                    activeFilters.delete(filter);
-                    this.classList.remove('active');
-                } else {
-                    activeFilters.delete('all');
-                    activeFilters.add(filter);
+    // Dietary filter button events - only if filter buttons exist
+    if (filterButtons.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.dataset.filter;
+                
+                if (filter === 'all') {
+                    // Reset to show all
+                    activeFilters = new Set(['all']);
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
                     this.classList.add('active');
+                } else {
+                    // Toggle specific filter
+                    if (activeFilters.has(filter)) {
+                        activeFilters.delete(filter);
+                        this.classList.remove('active');
+                    } else {
+                        activeFilters.delete('all');                        activeFilters.add(filter);
+                        this.classList.add('active');
+                        
+                        // Remove 'all' button active state
+                        const allButton = document.querySelector('.filter-btn[data-filter="all"]');
+                        if (allButton) allButton.classList.remove('active');
+                    }
                     
-                    // Remove 'all' button active state
-                    document.querySelector('.filter-btn[data-filter="all"]').classList.remove('active');
+                    // If no filters selected, default to 'all'
+                    if (activeFilters.size === 0) {
+                        activeFilters.add('all');
+                        const allButton = document.querySelector('.filter-btn[data-filter="all"]');
+                        if (allButton) allButton.classList.add('active');
+                    }
                 }
                 
-                // If no filters selected, default to 'all'
-                if (activeFilters.size === 0) {
-                    activeFilters.add('all');
-                    document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
-                }
-            }
-            
-            filterItems();
+                filterItems();
+            });
         });
-    });
+    }
 
-    // Spice level filter events
-    spiceButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const spiceLevel = this.dataset.spice;
-            
-            // Toggle spice filter
-            if (activeSpiceFilter === spiceLevel) {
-                activeSpiceFilter = null;
-                this.classList.remove('active');
-            } else {
-                spiceButtons.forEach(btn => btn.classList.remove('active'));
-                activeSpiceFilter = spiceLevel;
-                this.classList.add('active');
-            }
-            
-            filterItems();
+    // Spice level filter events - only if spice buttons exist
+    if (spiceButtons.length > 0) {
+        spiceButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const spiceLevel = this.dataset.spice;
+                
+                // Toggle spice filter
+                if (activeSpiceFilter === spiceLevel) {
+                    activeSpiceFilter = null;
+                    this.classList.remove('active');
+                } else {
+                    spiceButtons.forEach(btn => btn.classList.remove('active'));
+                    activeSpiceFilter = spiceLevel;
+                    this.classList.add('active');
+                }
+                
+                filterItems();
+            });
         });
-    });
+    }
 
     // Smooth scroll for tab content
     function smoothScrollToContent() {
@@ -252,9 +283,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Optional: Add smooth scroll when tab changes
-    tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            setTimeout(smoothScrollToContent, 100);
+    if (tabButtons.length > 0) {
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                setTimeout(smoothScrollToContent, 100);
+            });
         });
-    });
+    }
 });

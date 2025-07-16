@@ -3,11 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Sanskrit Restaurant</title>
+    <title>Menu - Sanskrit Restaurant | Happy Hour £10-£15 | Newcastle Indian Food</title>
+    <meta name="description" content="Explore Sanskrit Restaurant's authentic Indian menu featuring our popular Happy Hour deals from £10pp weekdays evenings. Traditional curries, breakfast, vegan options & more in Newcastle.">
+    <meta name="keywords" content="Sanskrit Restaurant menu, Happy Hour deals Newcastle, Indian food £10, weekday curry offers, authentic Indian restaurant Newcastle, vegan curry options">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom styles for menu-tabs.html floating header -->
+    <style>
+        /* Floating hamburger menu styles */
+        .floating-menu {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 50px;
+            padding: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .floating-menu.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .floating-hamburger {
+            display: flex;
+            flex-direction: column;
+            width: 25px;
+            height: 20px;
+            cursor: pointer;
+            justify-content: space-between;
+        }
+        
+        .floating-hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: #d4af37;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .floating-hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .floating-hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .floating-hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        .floating-nav-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 10px;
+            min-width: 200px;
+            transform: translateY(-20px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .floating-nav-menu.show {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .floating-nav-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            transition: color 0.3s ease;
+        }
+        
+        .floating-nav-menu a:last-child {
+            border-bottom: none;
+        }
+        
+        .floating-nav-menu a:hover {
+            color: #d4af37;
+        }
+        
+        /* Hide original navbar when floating menu is active */
+        .navbar.hidden {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        /* Ensure menu tabs section has proper spacing when navbar is hidden */
+        .menu-tabs-section {
+            transition: padding-top 0.3s ease;
+        }
+        
+        .menu-tabs-section.navbar-hidden {
+            padding-top: 50px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -37,10 +151,13 @@
                     <a href="https://sanskritrestaurant.com/book-table" class="nav-link">Book Table</a>
                 </li>
                 <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
+                    <a href="https://sanskritrestaurant.com" class="nav-link">Order Now</a>
                 </li>
                 <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
+                    <a href="locations.html" class="nav-link">Our Locations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
                 </li>
             </ul>
             
@@ -51,6 +168,22 @@
             </div>
         </div>
     </nav>
+
+    <!-- Floating Navigation Menu (menu-tabs.html only) -->
+    <div class="floating-menu" id="floating-menu">
+        <div class="floating-hamburger" id="floating-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="floating-nav-menu" id="floating-nav-menu">
+            <a href="index.html">Home</a>
+            <a href="menu-tabs.html">All Menus</a>
+            <a href="https://sanskritrestaurant.com/book-table">Book Table</a>
+            <a href="about.html">About</a>
+            <a href="locations.html">Our Locations</a>
+        </div>
+    </div>
 
     <!-- Menu Tabs -->
     <section class="menu-tabs-section">
@@ -90,16 +223,16 @@
                             <h4>Spice Level:</h4>
                             <div class="spice-buttons">
                                 <button class="spice-btn" data-spice="mild">
-                                    <span class="spice-indicator mild">🌶️</span> Mild
+                                    Mild
                                 </button>
                                 <button class="spice-btn" data-spice="medium">
-                                    <span class="spice-indicator medium">🌶️🌶️</span> Medium
+                                    <span class="spice-indicator medium">🌶️</span> Medium
                                 </button>
                                 <button class="spice-btn" data-spice="hot">
-                                    <span class="spice-indicator hot">🌶️🌶️🌶️</span> Hot
+                                    <span class="spice-indicator hot">🌶️🌶️</span> Hot
                                 </button>
                                 <button class="spice-btn" data-spice="very-hot">
-                                    <span class="spice-indicator very-hot">🌶️🌶️🌶️🌶️</span> Very Hot
+                                    <span class="spice-indicator very-hot">🌶️🌶️🌶️</span> Very Hot
                                 </button>
                             </div>
                         </div>
@@ -176,13 +309,13 @@
                                 </div>
                                 <span class="price">£6.50</span>
                             </div>
-                            <div class="menu-item" data-dietary="dairy-free" data-spice="mild">
+                            <div class="menu-item" data-dietary="dairy-free" data-spice="medium">
                                 <div class="item-info">
                                     <h3>Chicken Chaat</h3>
                                     <p>Tender chicken pieces tossed with fresh veggies, aromatic spices, and a squeeze of zesty lemon</p>
                                     <div class="dietary-tags">
                                         <span class="tag dairy-free">Dairy Free</span>
-                                        <span class="tag spice-mild">Mild</span>
+                                        <span class="tag spice-medium">Medium Heat</span>
                                     </div>
                                 </div>
                                 <span class="price">£4.95</span>
@@ -208,13 +341,13 @@
                                 </div>
                                 <span class="price">£4.50</span>
                             </div>
-                            <div class="menu-item" data-dietary="dairy-free" data-spice="hot">
+                            <div class="menu-item" data-dietary="dairy-free" data-spice="mild">
                                 <div class="item-info">
                                     <h3>Chicken Lollipop</h3>
                                     <p>Tender chicken wings transformed into finger-lickin' lollipops. Juicy & luscious on the inside. Rich & crispy batter on the outside</p>
                                     <div class="dietary-tags">
                                         <span class="tag dairy-free">Dairy Free</span>
-                                        <span class="tag spice-hot">Hot</span>
+                                        <span class="tag spice-mild">Mild</span>
                                     </div>
                                 </div>
                                 <span class="price">£7.50</span>
@@ -245,14 +378,14 @@
                     <div class="menu-section">
                         <h2>Grill Starters</h2>
                         <div class="menu-items">
-                            <div class="menu-item" data-dietary="gluten-free,dairy-free" data-spice="mild">
+                            <div class="menu-item" data-dietary="gluten-free,dairy-free" data-spice="medium">
                                 <div class="item-info">
                                     <h3>Chicken Tikka</h3>
                                     <p>Juicy chicken marinated in exotic tandoori masala, then expertly smoked & sauteed to perfection</p>
                                     <div class="dietary-tags">
                                         <span class="tag gluten-free">Gluten Free</span>
                                         <span class="tag dairy-free">Dairy Free</span>
-                                        <span class="tag spice-mild">Mild</span>
+                                        <span class="tag spice-medium">Medium Heat</span>
                                     </div>
                                 </div>
                                 <span class="price">£6.00</span>
@@ -288,22 +421,22 @@
                                     </div>
                                 </div>
                                 <div class="combo-options">
-                                    <div class="combo-option" data-dietary="gluten-free" data-spice="mild">
+                                    <div class="combo-option" data-dietary="gluten-free" data-spice="medium">
                                         <div class="item-info">
                                             <h4>Quarter Tandoori Chicken</h4>
                                             <div class="dietary-tags">
                                                 <span class="tag gluten-free">Gluten Free</span>
-                                                <span class="tag spice-mild">Mild</span>
+                                                <span class="tag spice-medium">Medium Heat</span>
                                             </div>
                                         </div>
                                         <span class="price">£7.00</span>
                                     </div>
-                                    <div class="combo-option" data-dietary="gluten-free" data-spice="mild">
+                                    <div class="combo-option" data-dietary="gluten-free" data-spice="medium">
                                         <div class="item-info">
                                             <h4>Half Tandoori Chicken</h4>
                                             <div class="dietary-tags">
                                                 <span class="tag gluten-free">Gluten Free</span>
-                                                <span class="tag spice-mild">Mild</span>
+                                                <span class="tag spice-medium">Medium Heat</span>
                                             </div>
                                         </div>
                                         <span class="price">£12.50</span>
@@ -344,14 +477,14 @@
                                 </div>
                                 <span class="price">£12.95</span>
                             </div>
-                            <div class="menu-item" data-dietary="vegetarian,gluten-free" data-spice="mild">
+                            <div class="menu-item" data-dietary="vegetarian,gluten-free" data-spice="medium">
                                 <div class="item-info">
                                     <h3>Paneer Tikka Main</h3>
                                     <p>Chunks of soft, fresh paneer marinated in yogurt and spices, then grilled to perfection</p>
                                     <div class="dietary-tags">
                                         <span class="tag vegetarian">Vegetarian</span>
                                         <span class="tag gluten-free">Gluten Free</span>
-                                        <span class="tag spice-mild">Mild</span>
+                                        <span class="tag spice-medium">Medium Heat</span>
                                     </div>
                                 </div>
                                 <span class="price">£8.50</span>
@@ -1534,6 +1667,28 @@
                                 </div>
                                 <span class="price">£3.50</span>
                             </div>
+                            <div class="menu-item" data-dietary="vegetarian" data-spice="mild">
+                                <div class="item-info">
+                                    <h3>Garlic Coriander Naan</h3>
+                                    <p>Naan bread topped with aromatic garlic and fresh coriander</p>
+                                    <div class="dietary-tags">
+                                        <span class="tag vegetarian">Vegetarian</span>
+                                        <span class="tag spice-mild">Mild</span>
+                                    </div>
+                                </div>
+                                <span class="price">£3.50</span>
+                            </div>
+                            <div class="menu-item" data-dietary="vegetarian" data-spice="medium">
+                                <div class="item-info">
+                                    <h3>Garlic Chilli Naan</h3>
+                                    <p>Naan bread topped with garlic and green chillies for an extra kick</p>
+                                    <div class="dietary-tags">
+                                        <span class="tag vegetarian">Vegetarian</span>
+                                        <span class="tag spice-medium">Medium Heat</span>
+                                    </div>
+                                </div>
+                                <span class="price">£3.50</span>
+                            </div>
                             <div class="menu-item" data-dietary="vegetarian" data-spice="none">
                                 <div class="item-info">
                                     <h3>Cheese Naan</h3>
@@ -1746,6 +1901,19 @@
                     <div class="menu-section">
                         <h2>Sides</h2>
                         <div class="menu-items">
+                            <div class="menu-item" data-dietary="vegetarian,vegan,gluten-free,dairy-free" data-spice="none">
+                                <div class="item-info">
+                                    <h3>Poppadom</h3>
+                                    <p>A big round poppadom</p>
+                                    <div class="dietary-tags">
+                                        <span class="tag vegetarian">Vegetarian</span>
+                                        <span class="tag vegan">Vegan</span>
+                                        <span class="tag gluten-free">Gluten Free</span>
+                                        <span class="tag dairy-free">Dairy Free</span>
+                                    </div>
+                                </div>
+                                <span class="price">£0.95</span>
+                            </div>
                             <div class="menu-item" data-dietary="vegetarian,vegan,gluten-free,dairy-free" data-spice="medium">
                                 <div class="item-info">
                                     <h3>Bombay Aloo</h3>
@@ -1828,12 +1996,6 @@
                                 </div>
                                 <span class="price">£4.95</span>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="menu-section">
-                        <h2>Chips & Extras</h2>
-                        <div class="menu-items">
                             <div class="menu-item" data-dietary="vegetarian,vegan,gluten-free,dairy-free" data-spice="none">
                                 <div class="item-info">
                                     <h3>Plain Chips</h3>
@@ -1861,29 +2023,16 @@
                                 </div>
                                 <span class="price">£4.95</span>
                             </div>
-                            <div class="menu-item" data-dietary="vegetarian,vegan,gluten-free,dairy-free" data-spice="none">
-                                <div class="item-info">
-                                    <h3>Poppadom (2 pcs)</h3>
-                                    <p>Crispy lentil wafers</p>
-                                    <div class="dietary-tags">
-                                        <span class="tag vegetarian">Vegetarian</span>
-                                        <span class="tag vegan">Vegan</span>
-                                        <span class="tag gluten-free">Gluten Free</span>
-                                        <span class="tag dairy-free">Dairy Free</span>
-                                    </div>
-                                </div>
-                                <span class="price">£2.95</span>
-                            </div>
                             <div class="menu-item" data-dietary="vegetarian,gluten-free" data-spice="none">
                                 <div class="item-info">
                                     <h3>Raita</h3>
-                                    <p>Cool yogurt with cucumber and spices</p>
+                                    <p>Cool yogurt with veggies and spices</p>
                                     <div class="dietary-tags">
                                         <span class="tag vegetarian">Vegetarian</span>
                                         <span class="tag gluten-free">Gluten Free</span>
                                     </div>
                                 </div>
-                                <span class="price">£0.95</span>
+                                <span class="price">£2.95</span>
                             </div>
                         </div>
                     </div>
@@ -2729,116 +2878,125 @@
 
                 <!-- Happy Hour Tab Content -->
                 <div class="tab-content" id="happy-hour">
+                    <div class="menu-intro">
+                        <h2>Happy Hour - Weekday Special</h2>
+                        <p class="menu-description">Our most popular menu! Available weekdays during evening dine-in service (5:00 PM - 10:30 PM). Two fantastic value options:</p>
+                    </div>
+                    <br>
+
                     <div class="menu-section">
-                        <h2>Tenner Thali - Tuesday to Friday</h2>
-                        <p class="happy-hour-time">Choose 1 | £10 per person</p>
+                        <h2>£10 Per Person Menu</h2>
                         <div class="menu-items">
                             <div class="menu-item">
                                 <div class="item-info">
-                                    <h3>Poppadom + Main + Side</h3>
-                                    <p><strong>Appetiser:</strong> Poppadom with mango chutney/mint yogurt<br>
-                                    <strong>Mains:</strong> Choose 1 veg/chicken/lamb (+£2)/prawn (+£3)<br>
-                                    <strong>Sides:</strong> Bread or Rice or Chips</p>
+                                    <h3>What's Included:</h3>
+                                    <p><strong>• Poppadom</strong> with mango chutney & mint yogurt<br>
+                                    <strong>• Any Classic Curry</strong><br>
+                                    <strong>• Any Side</strong></p>
                                 </div>
                                 <span class="price">£10.00</span>
                             </div>
                         </div>
-                        
-                        <h3>Available Curries:</h3>
+                    </div>
+
+                    <div class="menu-section">
+                        <h2>£15 Per Person Menu</h2>
                         <div class="menu-items">
                             <div class="menu-item">
                                 <div class="item-info">
-                                    <h3>Mild Curries</h3>
+                                    <h3>What's Included:</h3>
+                                    <p><strong>• Poppadom</strong> with mango chutney & mint yogurt<br>
+                                    <strong>• Any Starter</strong><br>
+                                    <strong>• Any Classic Curry</strong><br>
+                                    <strong>• Any Side</strong><br><br>
+                                    <strong>OR</strong><br><br>
+                                    <strong>• Any 3 Starters</strong></p>
+                                </div>
+                                <span class="price">£15.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-section">
+                        <h3>Starters</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h3>Vegetarian Starters</h3>
+                                    <p>Onion Bhajji, Vegetable Samosa, Grilled Potato Fry, Vegetable Manchurian</p>
+                                </div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h3>Non-Vegetarian Starters</h3>
+                                    <p>Prawn Cocktail, Chicken Pakora, Chicken Chaat, Meat Samosa, Chicken Tikka</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <div class="menu-section">
+                        <h3>Curries</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h3>Mild & Creamy</h3>
                                     <p>Masala, Korma, Pasanda</p>
                                 </div>
                             </div>
                             <div class="menu-item">
                                 <div class="item-info">
-                                    <h3>Medium Curries</h3>
-                                    <p>Dopiaza, Rogan Josh, Balti, Bhuna, Saag</p>
+                                    <h3>Medium Spiced</h3>
+                                    <p>Dopiaza, Rogan Josh, Balti, Bhuna, Saag, Satkora</p>
                                 </div>
                             </div>
                             <div class="menu-item">
                                 <div class="item-info">
-                                    <h3>Hot Curries</h3>
-                                    <p>Pathia, Dansak, Jalfrezi, Satkora, Garlic Chilli</p>
+                                    <h3>Hot & Spicy</h3>
+                                    <p>South Indian Garlic Chilli, Pathia, Dansak, Jalfrezi, Madras</p>
                                 </div>
                             </div>
                             <div class="menu-item">
                                 <div class="item-info">
-                                    <h3>Very Hot Curries</h3>
-                                    <p>Madras, Vindaloo, Phall, Naga</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="menu-section">
-                        <h2>Fifteen & Full - Tuesday to Friday</h2>
-                        <p class="happy-hour-time">Choose 1 | £15 per person</p>
-                        <div class="menu-items">
-                            <div class="menu-item">
-                                <div class="item-info">
-                                    <h3>Poppadom + Starter + Main + Side</h3>
-                                    <p><strong>Appetiser:</strong> Poppadom with mango chutney or mint yogurt<br>
-                                    <strong>Starters:</strong> Choose 1 from our selection<br>
-                                    <strong>Mains:</strong> Choose 1 veg/chicken/lamb (+£2)/prawn (+£3)<br>
-                                    <strong>Sides:</strong> Bread or Rice or Chips</p>
-                                </div>
-                                <span class="price">£15.00</span>
-                            </div>
-                        </div>
-                        
-                        <h3>Available Starters:</h3>
-                        <div class="menu-items">
-                            <div class="menu-item">
-                                <div class="item-info">
-                                    <h3>Vegetarian Options</h3>
-                                    <p>Onion Bhajji, Veg Samosa, Grilled Potato Fry, Veg Manchurian</p>
-                                </div>
-                            </div>
-                            <div class="menu-item">
-                                <div class="item-info">
-                                    <h3>Non-Vegetarian Options</h3>
-                                    <p>Prawn Cocktail, Chicken Pakora, Chicken Chaat, Meat Samosa, Chips & Nuggets, Chicken Tikka</p>
+                                    <h3>Extra Hot</h3>
+                                    <p>Vindaloo, Naga, Phall</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="menu-section">
-                        <h2>Buy 1 Get 1 Free - Every Thursday</h2>
-                        <p class="happy-hour-time">Applies to beers and ciders only</p>
+                        <h3>Sides</h3>
                         <div class="menu-items">
                             <div class="menu-item">
                                 <div class="item-info">
-                                    <h3>Beer & Cider Offer</h3>
-                                    <p>Buy any beer or cider and get another one free every Thursday</p>
-                                </div>
-                                <span class="price">BOGO</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="menu-section">
-                        <h2>Side Options</h2>
-                        <div class="menu-items">
-                            <div class="menu-item">
-                                <div class="item-info">
-                                    <h3>Rice Options</h3>
-                                    <p>Steamed Rice, Pilau Rice</p>
+                                    <h3>Rice Selection</h3>
+                                    <p>Steamed Basmati Rice, Pilau Basmati Rice</p>
                                 </div>
                             </div>
                             <div class="menu-item">
                                 <div class="item-info">
-                                    <h3>Bread Options</h3>
+                                    <h3>Fresh Breads</h3>
                                     <p>Plain Naan, Garlic Naan, Tandoor Roti</p>
                                 </div>
                             </div>
                             <div class="menu-item">
                                 <div class="item-info">
-                                    <h3>Other Sides</h3>
+                                    <h3>Alternative Sides</h3>
                                     <p>Chips</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-section happy-hour-note">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h3>🕒 Happy Hour Availability</h3>
+                                    <p><strong>When:</strong> All weekdays<br>
+                                    <strong>Time:</strong> 5:00 PM - 10:30 PM<br>
+                                    <strong>Protein Options:</strong> Vegetarian included | Chicken included | Lamb +£2 | Prawn +£3</p>
                                 </div>
                             </div>
                         </div>
@@ -3009,9 +3167,11 @@
                 </div>
                 <div class="footer-section">
                     <h4>Hours</h4>
-                    <p>Mon-Thu: 5:00 PM - 11:00 PM</p>
-                    <p>Fri-Sat: 5:00 PM - 12:00 AM</p>
-                    <p>Sun: 5:00 PM - 10:00 PM</p>
+                    <p><strong>Breakfast (Daily):</strong> 7:00 AM - 1:00 PM</p>
+                    <p><strong>Dinner:</strong></p>
+                    <p>Monday: Closed</p>
+                    <p>Tue-Fri: 5:00 PM - 10:30 PM</p>
+                    <p>Sat-Sun: 3:00 PM - 10:30 PM</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -3022,5 +3182,70 @@
 
     <script src="js/script.js"></script>
     <script src="js/menu-tabs.js"></script>
+    
+    <!-- Floating menu functionality (menu-tabs.html only) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('navbar');
+            const floatingMenu = document.getElementById('floating-menu');
+            const floatingHamburger = document.getElementById('floating-hamburger');
+            const floatingNavMenu = document.getElementById('floating-nav-menu');
+            const menuTabsSection = document.querySelector('.menu-tabs-section');
+            
+            let lastScrollTop = 0;
+            let isFloatingMenuVisible = false;
+            
+            // Handle scroll events
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // Show floating menu when scrolling down after 100px
+                if (scrollTop > 100 && scrollTop > lastScrollTop) {
+                    // Scrolling down
+                    if (!isFloatingMenuVisible) {
+                        navbar.classList.add('hidden');
+                        floatingMenu.classList.add('show');
+                        menuTabsSection.classList.add('navbar-hidden');
+                        isFloatingMenuVisible = true;
+                    }
+                } else if (scrollTop <= 100) {
+                    // At top of page
+                    navbar.classList.remove('hidden');
+                    floatingMenu.classList.remove('show');
+                    menuTabsSection.classList.remove('navbar-hidden');
+                    isFloatingMenuVisible = false;
+                    
+                    // Close floating menu if open
+                    floatingHamburger.classList.remove('active');
+                    floatingNavMenu.classList.remove('show');
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+            
+            // Handle floating hamburger click
+            floatingHamburger.addEventListener('click', function() {
+                floatingHamburger.classList.toggle('active');
+                floatingNavMenu.classList.toggle('show');
+            });
+            
+            // Close floating menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!floatingMenu.contains(event.target)) {
+                    floatingHamburger.classList.remove('active');
+                    floatingNavMenu.classList.remove('show');
+                }
+            });
+            
+            // Close floating menu when clicking on a menu item
+            const floatingMenuLinks = floatingNavMenu.querySelectorAll('a');
+            floatingMenuLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    floatingHamburger.classList.remove('active');
+                    floatingNavMenu.classList.remove('show');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

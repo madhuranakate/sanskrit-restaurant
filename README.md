@@ -19,7 +19,7 @@ A modern and sleek website for Sanskrit Indian Restaurant featuring authentic So
 - **Main Menu**: Complete dinner menu with starters, curries, rice, sides, breads, and desserts
 - **Breakfast Menu**: Authentic South Indian breakfast (7am-1pm) with dosas, idlis, vadas, and rice dishes
 - **Drinks Menu**: Traditional and modern beverage options
-- **Happy Hour**: Special timing and pricing for selected items
+- **Happy Hour**: £10-£15 complete meal deals (weekday evenings only) featuring curry, sides & optional starters
 
 ### Filtering Options
 - **Dietary**: Vegan, Vegetarian, Gluten-Free options

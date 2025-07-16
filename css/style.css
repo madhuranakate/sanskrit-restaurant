@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-subtitle {
-    display: inline-block;
+    display: block;
     color: var(--primary-color);
     font-weight: 500;
     text-transform: uppercase;

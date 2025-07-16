@@ -10,6 +10,9 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://sanskritrestaurant.uk/">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="restaurant">
     <meta property="og:url" content="https://sanskritrestaurant.uk/">
@@ -117,6 +120,14 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Custom inline styles -->
+    <style>
+        /* Center align the menu section subtitle */
+        .menu-slider-section .section-subtitle {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -146,10 +157,10 @@
                     <a href="https://sanskritrestaurant.com/book-table" class="nav-link">Book Table</a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://sanskritrestaurant.com" class="nav-link">Order</a>
+                    <a href="https://sanskritrestaurant.com" class="nav-link">Order Now</a>
                 </li>
                 <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact Us</a>
+                    <a href="locations.html" class="nav-link">Our Locations</a>
                 </li>
                 <li class="nav-item">
                     <a href="about.html" class="nav-link">About Us</a>
@@ -167,7 +178,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-image">
-            <img src="assets/hero.jpg" alt="Sanskrit Indian Restaurant Newcastle - Authentic Indian Cuisine Interior" class="hero-bg">
+            <img src="assets/ambience-3.jpg" alt="Sanskrit Indian Restaurant Newcastle - Authentic Indian Cuisine Interior" class="hero-bg">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
@@ -201,15 +212,15 @@
     <section class="menu-slider-section">
         <div class="container">
             <h1 class="section-title">Newcastle's Best Indian Restaurant Menus</h1>
-            <p class="section-subtitle">Authentic Indian cuisine crafted with traditional spices and fresh ingredients</p>
+            <p class="section-subtitle">Choose your Menu</p><br>
             <div class="menu-grid">
                 <div class="menu-card" onclick="window.location.href='menu-tabs.html#main'">
                     <div class="menu-card-image">
-                        <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Authentic Indian Curry Newcastle - Sanskrit Restaurant Main Menu">
+                        <img src="assets/spread-3.JPG" alt="Authentic Indian Curry Newcastle - Sanskrit Restaurant Main Menu">
                         <div class="menu-card-overlay"></div>
                     </div>
                     <div class="menu-card-content">
-                        <h2>Main Menu - Traditional Indian Dishes</h2>
+                        <h2>Main Menu - Traditional Indian Dishes</h2><br>
                         <p>Rich, aromatic curries, fragrant biryanis, and authentic Indian specialties prepared with traditional spices and fresh ingredients</p>
                         <div class="menu-card-action">
                             <a href="menu-tabs.html#main" class="menu-card-link">
@@ -221,12 +232,12 @@
                 
                 <div class="menu-card" onclick="window.location.href='menu-tabs.html#drinks'">
                     <div class="menu-card-image">
-                        <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Indian Drinks Menu Newcastle - Lassi, Chai, Wine">
+                        <img src="assets/cobra-beer.JPG" alt="Alcoholic Drinks Newcastle - Beer, Wine & Indian Beverages - Licensed Restaurant">
                         <div class="menu-card-overlay"></div>
                     </div>
                     <div class="menu-card-content">
-                        <h2>Drinks Menu - Indian Beverages</h2>
-                        <p>Traditional lassi, authentic chai, wines, and refreshing beverages to complement your Indian meal perfectly</p>
+                        <h2>Drinks Menu - Beer, Wine & Indian refreshers</h2><br>
+                        <p>Licensed restaurant offering beer, wine, traditional lassi, desi chai, and other refreshing beverages to complement your Indian meal</p>
                         <div class="menu-card-action">
                             <a href="menu-tabs.html#drinks" class="menu-card-link">
                                 View Drinks Menu <i class="fas fa-arrow-right"></i>
@@ -237,15 +248,15 @@
                 
                 <div class="menu-card" onclick="window.location.href='menu-tabs.html#happy-hour'">
                     <div class="menu-card-image">
-                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Happy Hour Indian Food Newcastle - Appetizers and Drinks">
+                        <img src="assets/spread-2.JPG" alt="Happy Hour £10-£15 Deals Newcastle - Complete Indian Meals">
                         <div class="menu-card-overlay"></div>
                     </div>
                     <div class="menu-card-content">
-                        <h2>Happy Hour - Indian Appetizers</h2>
-                        <p>An array of delicious Indian appetizers and beverages served together for the perfect evening feast</p>
+                        <h2>Happy Hour - £10 & £15 Deals</h2><br>
+                        <p>Our most popular menu! Complete meals from £10pp including poppadom, curry & sides. Available Weekdays. Add starter for just £5 more!</p>
                         <div class="menu-card-action">
                             <a href="menu-tabs.html#happy-hour" class="menu-card-link">
-                                View Happy Hour <i class="fas fa-arrow-right"></i>
+                                View Happy Hour Menu <i class="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
@@ -253,11 +264,11 @@
                 
                 <div class="menu-card" onclick="window.location.href='menu-tabs.html#vegan'">
                     <div class="menu-card-image">
-                        <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Vegan Indian Food Newcastle - Plant-based Indian Dishes">
+                        <img src="assets/idli-1.jpg" alt="Vegan Indian Food Newcastle - Plant-based Indian Dishes">
                         <div class="menu-card-overlay"></div>
                     </div>
                     <div class="menu-card-content">
-                        <h2>Vegan Menu - Plant-Based Indian</h2>
+                        <h2>Vegan Menu - Plant-Based Indian</h2><br>
                         <p>Plant-based Indian delicacies bursting with flavor and made with the freshest ingredients</p>
                         <div class="menu-card-action">
                             <a href="menu-tabs.html#vegan" class="menu-card-link">
@@ -269,11 +280,11 @@
                 
                 <div class="menu-card" onclick="window.location.href='menu-tabs.html#breakfast'">
                     <div class="menu-card-image">
-                        <img src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="South Indian Breakfast Newcastle - Dosa, Idli, Sambar">
+                        <img src="assets/dosa-1.jpg" alt="South Indian Breakfast Newcastle - Dosa, Idli, Sambar">
                         <div class="menu-card-overlay"></div>
                     </div>
                     <div class="menu-card-content">
-                        <h2>South Indian Breakfast</h2>
+                        <h2>South Indian Breakfast</h2><br>
                         <p>Crispy dosas, fluffy idlis, and authentic South Indian breakfast specialties served with fresh chutneys and sambar</p>
                         <div class="menu-card-action">
                             <a href="menu-tabs.html#breakfast" class="menu-card-link">
@@ -285,11 +296,11 @@
                 
                 <div class="menu-card" onclick="window.location.href='catering-menu.html'">
                     <div class="menu-card-image">
-                        <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Indian Catering Newcastle - Event Catering Services">
+                        <img src="assets/spread-4.jpg" alt="Indian Catering Newcastle - Event Catering Services">
                         <div class="menu-card-overlay"></div>
                     </div>
                     <div class="menu-card-content">
-                        <h2>Indian Catering Newcastle</h2>
+                        <h2>Indian Catering Newcastle</h2><br>
                         <p>Professional Indian catering services for events and special occasions with customizable menu options</p>
                         <div class="menu-card-action">
                             <a href="catering-menu.html" class="menu-card-link">
@@ -303,39 +314,110 @@
     </section>
 
     <!-- Services Section -->
-    <section class="services-section" style="background: #f8f9fa; padding: 4rem 0;">
+    <section class="services-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); padding: 6rem 0;">
         <div class="container">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Why Choose Sanskrit Restaurant Newcastle?</h2>
-            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-                <div class="service-card" style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <i class="fas fa-utensils" style="font-size: 2.5rem; color: #c17135; margin-bottom: 1rem;"></i>
-                    <h3>Signature Dishes</h3>
-                    <p>Famous for our Sanskrit Signature curry and Blimey Butter Chicken - Newcastle's most talked-about Indian dishes!</p>
+            <h2 class="section-title" style="text-align: center; margin-bottom: 4rem; font-size: 2.8rem; font-weight: 700;">Why Choose Sanskrit Restaurant Newcastle?</h2>
+            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                <div class="service-card" style="background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%); padding: 3rem 2.5rem; border: none; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.08), 0 5px 15px rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); position: relative; overflow: hidden;">
+                    <div style="margin: 0 auto 2rem; display: flex; justify-content: center;">
+                        <svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="#ff6b6b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 50 C 25 45, 35 45, 40 50 L 60 50 C 65 45, 75 45, 80 50" fill="none"/>
+                            <circle cx="30" cy="65" r="8" fill="#ff6b6b" stroke="#ff6b6b" stroke-width="2"/>
+                            <circle cx="70" cy="65" r="8" fill="#ff6b6b" stroke="#ff6b6b" stroke-width="2"/>
+                            <path d="M15 35 C 20 30, 30 28, 40 30 L 60 30 C 70 28, 80 30, 85 35" fill="none"/>
+                            <path d="M25 20 L 35 25 L 30 35" fill="none"/>
+                            <path d="M75 20 L 65 25 L 70 35" fill="none"/>
+                            <text x="50" y="85" text-anchor="middle" font-size="8" fill="#ff6b6b">£10-15</text>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 1.5rem; color: #2c3e50;">Popular Menu Deals</h3>
+                    <p style="color: #6c757d; line-height: 1.6; font-size: 1rem;">Enjoy our Happy Hour special menu! Choose from our £15pp or £10pp popular selections - perfect for groups and sharing!</p>
                 </div>
-                <div class="service-card" style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <i class="fas fa-certificate" style="font-size: 2.5rem; color: #c17135; margin-bottom: 1rem;"></i>
-                    <h3>Certified Chefs</h3>
-                    <p>All our chefs are Level 2 & 3 food hygiene certified, ensuring the highest standards of food safety and quality.</p>
+                <div class="service-card" style="background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%); padding: 3rem 2.5rem; border: none; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.08), 0 5px 15px rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); position: relative; overflow: hidden;">
+                    <div style="margin: 0 auto 2rem; display: flex; justify-content: center;">
+                        <svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="#4ecdc4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <ellipse cx="50" cy="35" rx="25" ry="15" fill="none"/>
+                            <path d="M25 35 C 25 50, 35 65, 50 65 C 65 65, 75 50, 75 35" fill="none"/>
+                            <path d="M35 45 C 40 40, 45 42, 50 45 C 55 42, 60 40, 65 45" fill="none"/>
+                            <circle cx="40" cy="25" r="2" fill="#4ecdc4"/>
+                            <circle cx="60" cy="25" r="2" fill="#4ecdc4"/>
+                            <path d="M45 55 C 47 58, 53 58, 55 55" fill="none"/>
+                            <path d="M30 20 Q 35 15, 40 20" fill="none"/>
+                            <path d="M60 20 Q 65 15, 70 20" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 1.5rem; color: #2c3e50;">Signature Dishes</h3>
+                    <p style="color: #6c757d; line-height: 1.6; font-size: 1rem;">Famous for our Sanskrit Signature curry and Blimey Butter Chicken - Newcastle's most talked-about Indian dishes!</p>
                 </div>
-                <div class="service-card" style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <i class="fas fa-baby" style="font-size: 2.5rem; color: #c17135; margin-bottom: 1rem;"></i>
-                    <h3>Family Friendly</h3>
-                    <p>High chairs available for children, making us the perfect family Indian restaurant in Newcastle.</p>
+                <div class="service-card" style="background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%); padding: 3rem 2.5rem; border: none; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.08), 0 5px 15px rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); position: relative; overflow: hidden;">
+                    <div style="margin: 0 auto 2rem; display: flex; justify-content: center;">
+                        <svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="#667eea" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M30 25 C 35 20, 65 20, 70 25" fill="none"/>
+                            <path d="M25 30 C 30 35, 35 40, 50 40 C 65 40, 70 35, 75 30" fill="none"/>
+                            <circle cx="50" cy="55" r="18" fill="none"/>
+                            <path d="M40 65 L 45 70 L 60 55" fill="none" stroke-width="4"/>
+                            <path d="M35 45 Q 40 50, 45 45" fill="none"/>
+                            <path d="M55 45 Q 60 50, 65 45" fill="none"/>
+                            <text x="50" y="85" text-anchor="middle" font-size="6" fill="#667eea">CERTIFIED</text>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 1.5rem; color: #2c3e50;">Certified Chefs</h3>
+                    <p style="color: #6c757d; line-height: 1.6; font-size: 1rem;">All our chefs are Level 2 & 3 food hygiene certified, ensuring the highest standards of food safety and quality.</p>
                 </div>
-                <div class="service-card" style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <i class="fas fa-sun" style="font-size: 2.5rem; color: #c17135; margin-bottom: 1rem;"></i>
-                    <h3>Breakfast Service</h3>
-                    <p>Open from 7am daily! Enjoy authentic South Indian breakfast dishes - the only Indian breakfast in Newcastle.</p>
+                <div class="service-card" style="background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%); padding: 3rem 2.5rem; border: none; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.08), 0 5px 15px rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); position: relative; overflow: hidden;">
+                    <div style="margin: 0 auto 2rem; display: flex; justify-content: center;">
+                        <svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="#ffeaa7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="50" cy="50" r="20" fill="none"/>
+                            <path d="M50 20 L 52 35 L 50 35 L 48 20" fill="#ffeaa7"/>
+                            <path d="M70 30 L 58 40 L 56 38 L 68 28" fill="#ffeaa7"/>
+                            <path d="M80 50 L 65 52 L 65 50 L 80 48" fill="#ffeaa7"/>
+                            <path d="M70 70 L 58 60 L 56 62 L 68 72" fill="#ffeaa7"/>
+                            <path d="M50 80 L 48 65 L 50 65 L 52 80" fill="#ffeaa7"/>
+                            <path d="M30 70 L 42 60 L 44 62 L 32 72" fill="#ffeaa7"/>
+                            <path d="M20 50 L 35 48 L 35 50 L 20 52" fill="#ffeaa7"/>
+                            <path d="M30 30 L 42 40 L 44 38 L 32 28" fill="#ffeaa7"/>
+                            <circle cx="50" cy="50" r="8" fill="#ffeaa7"/>
+                            <text x="50" y="15" text-anchor="middle" font-size="8" fill="#ffeaa7">7AM</text>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 1.5rem; color: #2c3e50;">Breakfast Service</h3>
+                    <p style="color: #6c757d; line-height: 1.6; font-size: 1rem;">Open from 7am daily! Enjoy authentic South Indian breakfast dishes - the only Indian breakfast in Newcastle.</p>
                 </div>
-                <div class="service-card" style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <i class="fas fa-wine-glass" style="font-size: 2.5rem; color: #c17135; margin-bottom: 1rem;"></i>
-                    <h3>Small Plates</h3>
-                    <p>Perfect for sharing! Try our small plates dining experience with authentic Indian appetizers and tapas-style dishes.</p>
+                <div class="service-card" style="background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%); padding: 3rem 2.5rem; border: none; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.08), 0 5px 15px rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); position: relative; overflow: hidden;">
+                    <div style="margin: 0 auto 2rem; display: flex; justify-content: center;">
+                        <svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="#a29bfe" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="35" cy="35" r="12" fill="none"/>
+                            <circle cx="65" cy="35" r="8" fill="none"/>
+                            <circle cx="50" cy="60" r="10" fill="none"/>
+                            <circle cx="25" cy="65" r="6" fill="none"/>
+                            <circle cx="75" cy="65" r="7" fill="none"/>
+                            <path d="M25 25 Q 30 20, 35 25" fill="none"/>
+                            <path d="M55 25 Q 60 22, 65 25" fill="none"/>
+                            <path d="M40 50 Q 45 47, 50 50" fill="none"/>
+                            <path d="M18 58 Q 22 55, 25 58" fill="none"/>
+                            <path d="M68 58 Q 72 55, 75 58" fill="none"/>
+                            <path d="M20 80 C 30 75, 70 75, 80 80" fill="none" stroke-width="3"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 1.5rem; color: #2c3e50;">Small Plates</h3>
+                    <p style="color: #6c757d; line-height: 1.6; font-size: 1rem;">Perfect for sharing! Try our small plates dining experience with authentic Indian appetizers and tapas-style dishes.</p>
                 </div>
-                <div class="service-card" style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    <i class="fas fa-users" style="font-size: 2.5rem; color: #c17135; margin-bottom: 1rem;"></i>
-                    <h3>Private Hire</h3>
-                    <p>Book our restaurant for private events, parties, and celebrations. Perfect venue for your special occasions.</p>
+                <div class="service-card" style="background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%); padding: 3rem 2.5rem; border: none; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.08), 0 5px 15px rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); position: relative; overflow: hidden;">
+                    <div style="margin: 0 auto 2rem; display: flex; justify-content: center;">
+                        <svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="#fd79a8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="35" cy="40" r="8" fill="none"/>
+                            <circle cx="65" cy="40" r="8" fill="none"/>
+                            <path d="M35 32 Q 35 25, 32 20" fill="none"/>
+                            <path d="M65 32 Q 65 25, 68 20" fill="none"/>
+                            <ellipse cx="50" cy="65" rx="20" ry="12" fill="none"/>
+                            <path d="M30 65 C 35 70, 40 72, 50 70 C 60 72, 65 70, 70 65" fill="none"/>
+                            <path d="M40 75 L 45 80 L 50 75 L 55 80 L 60 75" fill="none"/>
+                            <circle cx="50" cy="25" r="3" fill="#fd79a8"/>
+                            <path d="M45 15 Q 50 10, 55 15" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 1.5rem; color: #2c3e50;">Private Hire</h3>
+                    <p style="color: #6c757d; line-height: 1.6; font-size: 1rem;">Book our restaurant for private events, parties, and celebrations. Perfect venue for your special occasions.</p>
                 </div>
             </div>
         </div>
@@ -369,7 +451,7 @@
                     </div>
                 </div>
                 <div class="vision-image">
-                    <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Traditional Indian Cooking at Sanskrit Restaurant Newcastle">
+                    <img src="assets/blimey-butter-chicken.JPG" alt="Traditional Indian Cooking at Sanskrit Restaurant Newcastle">
                 </div>
             </div>
         </div>
@@ -395,7 +477,7 @@
                         <li><a href="menu-tabs.html">Indian Food Menu</a></li>
                         <li><a href="https://sanskritrestaurant.com/book-table">Book Table Online</a></li>
                         <li><a href="about.html">About Sanskrit Restaurant</a></li>
-                        <li><a href="contact.html">Contact Indian Restaurant</a></li>
+                        <li><a href="locations.html">Our Locations</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -407,9 +489,11 @@
                 </div>
                 <div class="footer-section">
                     <h4>Opening Hours</h4>
-                    <p><strong>Monday:</strong> 7:00 AM - 1:00 PM (Breakfast only)</p>
-                    <p><strong>Tue-Fri:</strong> 7:00 AM - 1:00 PM & 5:00 PM - 10:30 PM</p>
-                    <p><strong>Sat-Sun:</strong> 7:00 AM - 1:00 PM & 3:00 PM - 10:30 PM</p>
+                    <p><strong>Breakfast (Daily):</strong> 7:00 AM - 1:00 PM</p>
+                    <p><strong>Dinner:</strong></p>
+                    <p>Monday: Closed</p>
+                    <p>Tue-Fri: 5:00 PM - 10:30 PM</p>
+                    <p>Sat-Sun: 3:00 PM - 10:30 PM</p>
                 </div>
             </div>
             <div class="footer-bottom">
