@@ -134,16 +134,20 @@ function initAllergenFilter() {
         }
         
         menuItems.forEach(item => {
-            const allergens = item.getAttribute('data-allergens') || '';
-            const allergenList = allergens.split(' ').filter(allergen => allergen.length > 0);
+            const dietary = item.getAttribute('data-dietary') || '';
+            const dietaryList = dietary.split(',').map(d => d.trim()).filter(d => d.length > 0);
             
-            // Hide item if it contains any selected allergens
-            const hasAllergen = selectedAllergens.some(allergen => allergenList.includes(allergen));
+            // Show item only if it has all the selected dietary requirements
+            const meetsAllRequirements = selectedAllergens.every(requirement => {
+                // Convert allergen to dietary requirement (e.g., 'dairy' becomes 'dairy-free')
+                const dietaryRequirement = requirement + '-free';
+                return dietaryList.includes(dietaryRequirement);
+            });
             
-            if (hasAllergen) {
-                hideMenuItem(item);
-            } else {
+            if (meetsAllRequirements) {
                 showMenuItem(item);
+            } else {
+                hideMenuItem(item);
             }
         });
     }
@@ -226,12 +230,18 @@ function initAdvancedFiltering() {
                 }
             }
             
-            // Allergen filter
+            // Allergen filter (now dietary filter)
             if (shouldShow && selectedAllergens.length > 0) {
-                const allergens = item.getAttribute('data-allergens') || '';
-                const allergenList = allergens.split(' ').filter(allergen => allergen.length > 0);
-                const hasAllergen = selectedAllergens.some(allergen => allergenList.includes(allergen));
-                if (hasAllergen) {
+                const dietary = item.getAttribute('data-dietary') || '';
+                const dietaryList = dietary.split(',').map(d => d.trim()).filter(d => d.length > 0);
+                
+                // Check if item meets all dietary requirements
+                const meetsAllRequirements = selectedAllergens.every(requirement => {
+                    const dietaryRequirement = requirement + '-free';
+                    return dietaryList.includes(dietaryRequirement);
+                });
+                
+                if (!meetsAllRequirements) {
                     shouldShow = false;
                 }
             }
