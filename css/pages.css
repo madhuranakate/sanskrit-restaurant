@@ -1867,6 +1867,10 @@ body .navbar {
 
 /* Tab Responsive Design */
 @media (max-width: 768px) {
+    .menu-tabs-section {
+        padding: 8rem 0 4rem 0; /* Increased top padding for mobile */
+    }
+
     .tab-buttons {
         flex-direction: column;
     }
@@ -1905,7 +1909,7 @@ body .navbar {
 
 @media (max-width: 480px) {
     .menu-tabs-section {
-        padding: 2rem 0;
+        padding: 6rem 0 2rem 0; /* Increased top padding for small mobile */
     }
     
     .tabs-container {
@@ -2111,14 +2115,60 @@ body .navbar {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .locations-widget-store-card-71379.css-daue4x {
-        position: static;
-        max-width: 100%;
-        margin: 20px;
+    .locations-content {
+        padding: 8rem 0 4rem 0;
     }
-    
+
+    /* Restructure layout on mobile - card above map */
+    .MuiPaper-root.css-nd3vzh {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .css-1d3bbye {
+        order: 2; /* Map container goes second */
+        position: relative;
+        z-index: 1;
+    }
+
     .css-308w4m {
         height: 300px;
+        margin-bottom: 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .locations-widget-store-card-71379.css-daue4x {
+        position: static !important;
+        order: 1; /* Card appears first (above map) */
+        max-width: 100% !important;
+        margin: 0 20px 20px 20px !important; /* Bottom margin to separate from map */
+        z-index: 100 !important; /* Lower than navbar menu (999) */
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+    }
+    
+    .sc-Nxspf.cfbVZG {
+        border-radius: 12px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .sc-Nxspf.cfbVZG iframe {
+        border-radius: 12px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .MuiPaper-root.css-srj5sf {
+        background: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 12px;
+        padding: 20px;
+        position: relative;
+        z-index: 100; /* Lower than navbar menu (999) */
     }
     
     .MuiTypography-h2Display.css-we4x09 {
@@ -2133,4 +2183,43 @@ body .navbar {
     .MuiTypography-finePrint1.css-pcw9wj {
         text-align: center;
     }
+}
+
+@media (max-width: 480px) {
+    .locations-content {
+        padding: 6rem 0 3rem 0;
+    }
+
+    .locations-widget-store-card-71379.css-daue4x {
+        margin: 15px !important;
+    }
+    
+    .css-308w4m {
+        height: 250px;
+        margin-bottom: 15px;
+    }
+    
+    .MuiPaper-root.css-srj5sf {
+        padding: 15px;
+    }
+    
+    .MuiTypography-h2Display.css-we4x09 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+}
+
+/* Footer contact links styling - ensure consistent across all pages */
+.footer .footer-section p a,
+footer .footer-section p a {
+    color: var(--text-light) !important;
+    text-decoration: underline !important;
+    opacity: 0.9;
+    transition: var(--transition);
+}
+
+.footer .footer-section p a:hover,
+footer .footer-section p a:hover {
+    color: var(--primary-color) !important;
+    opacity: 1;
 }

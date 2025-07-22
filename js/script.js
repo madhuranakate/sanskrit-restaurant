@@ -19,7 +19,7 @@ function initNavigation() {
         if (window.scrollY > 100) {
             navbar.classList.add('scrolled');
             if (logo) {
-                logo.src = 'assets/logo-black-text.png';
+                logo.src = 'assets/logo-white-text.png';
             }
         } else {
             navbar.classList.remove('scrolled');
@@ -46,8 +46,15 @@ function initNavigation() {
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            
+            // Skip if href is just "#" (dropdown triggers)
+            if (href === '#') {
+                return;
+            }
+            
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(href);
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth',
