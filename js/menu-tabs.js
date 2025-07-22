@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function toggleFilterVisibility(activeTab) {
         const filterSection = document.querySelector('.filter-section');
         if (filterSection) {
-            if (activeTab === 'happy-hour') {
+            if (activeTab === 'happy-hour' || activeTab === 'drinks' || activeTab === 'vegan') {
                 filterSection.style.display = 'none';
             } else {
                 filterSection.style.display = 'block';
