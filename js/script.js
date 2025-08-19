@@ -5,6 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     initMenuSlider();
     initScrollAnimations();
     initLoadingAnimations();
+
+    // Performance: lazy-load all non-hero images
+    document.querySelectorAll('img:not(.hero-bg)').forEach(img => {
+        if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+        if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
+        // Lower fetch priority for non-critical images
+        if (!img.hasAttribute('fetchpriority')) img.setAttribute('fetchpriority', 'low');
+    });
 });
 
 // Navigation functionality

@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Best Indian Restaurant Newcastle | Sanskrit Restaurant | Authentic Indian Cuisine</title>
+    <title>Best Indian Restaurant Newcastle | Sanskrit Restaurant | Authentic Indian Cuisine | Best of Newcastle | English Curry Awards 2025 Winner</title>
     <meta name="description" content="Sanskrit Restaurant Newcastle - Famous for Sanskrit Signature & Blimey Butter Chicken curry! Level 2/3 certified chefs. Breakfast, dinner & private hire. 391 Benton Park Road ☎️ 0191 659 4072">
     <meta name="keywords" content="Indian restaurant Newcastle, best Indian food Newcastle, Sanskrit Signature curry, Blimey Butter Chicken, curry house Newcastle, tandoor restaurant Newcastle upon Tyne, authentic Indian cuisine, biryani Newcastle, Indian takeaway, Indian breakfast Newcastle">
     <meta name="author" content="Sanskrit Restaurant">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://sanskritrestaurant.uk/">
+    <link
+        rel="preload"
+        as="image"
+        href="assets/ambience-3-1440.webp"
+        imagesrcset="assets/ambience-3-960.webp 960w, assets/ambience-3-1440.webp 1440w, assets/ambience-3-1920.webp 1920w"
+        imagesizes="100vw">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
@@ -16,7 +22,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="restaurant">
     <meta property="og:url" content="https://sanskritrestaurant.uk/">
-    <meta property="og:title" content="Best Indian Restaurant Newcastle | Sanskrit Restaurant">
+    <meta property="og:title" content="Best Indian Restaurant Newcastle | Sanskrit Restaurant | Authentic Indian Cuisine | Best of Newcastle | English Curry Awards 2025 Winner">
     <meta property="og:description" content="Experience authentic Indian flavours at Newcastle's premier Indian restaurant. Traditional curries, biryanis & tandoor specialties.">
     <meta property="og:image" content="https://sanskritrestaurant.uk/assets/hero.jpg">
     <meta property="og:site_name" content="Sanskrit Restaurant">
@@ -25,7 +31,7 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sanskritrestaurant.uk/">
-    <meta property="twitter:title" content="Best Indian Restaurant Newcastle | Sanskrit Restaurant">
+    <meta property="twitter:title" content="Best Indian Restaurant Newcastle | Sanskrit Restaurant | Authentic Indian Cuisine | Best of Newcastle | English Curry Awards 2025 Winner">
     <meta property="twitter:description" content="Experience authentic Indian flavours at Newcastle's premier Indian restaurant. Traditional curries, biryanis & tandoor specialties.">
     <meta property="twitter:image" content="https://sanskritrestaurant.uk/assets/hero.jpg">
     
@@ -178,12 +184,37 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-image">
-            <img src="assets/ambience-3.JPG" alt="Sanskrit Indian Restaurant Newcastle - Authentic Indian Cuisine Interior" class="hero-bg">
+            <picture>
+                <!-- WebP fallback -->
+                <source type="image/webp"
+                        srcset="
+                            assets/ambience-3-960.webp 960w,
+                            assets/ambience-3-1440.webp 1440w,
+                            assets/ambience-3-1920.webp 1920w"
+                        sizes="100vw">
+                <!-- JPG ultimate fallback -->
+                <img
+                    src="assets/ambience-3.JPG"
+                    srcset="
+                        assets/ambience-3-960.jpg 960w,
+                        assets/ambience-3-1440.jpg 1440w,
+                        assets/ambience-3-1920.jpg 1920w"
+                    sizes="100vw"
+                    width="1920" height="1080"
+                    alt="Sanskrit Indian Restaurant Newcastle - Award Winning 2025"
+                    class="hero-bg"
+                    fetchpriority="high"
+                    decoding="async">
+            </picture>
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
             <div class="hero-logo">
                 <img src="assets/logo-white-text.png" alt="Sanskrit Restaurant Newcastle - Best Indian Restaurant Logo" class="hero-logo-img">
+            </div>
+            <br>
+            <div class="hero-logo">
+                <img src="assets/english-curry-awards-logo.webp" alt="English Curry Awards Logo" class="hero-logo-img">
             </div>
         </div>
     </section>
