@@ -97,15 +97,15 @@ function updateOpeningStatus() {
     
     // Restaurant hours (in minutes from midnight)
     const hours = {
-        // Breakfast: 7:00 AM - 1:00 PM (Daily)
+        // Breakfast: 8:00 AM - 3:00 PM (Daily)
         // Dinner: Mon-Closed, Tue-Fri: 5:00 PM - 10:30 PM, Sat-Sun: 3:00 PM - 10:30 PM
-        1: { breakfast: { open: 7 * 60, close: 13 * 60 }, dinner: null }, // Monday: Breakfast only
-        2: { breakfast: { open: 7 * 60, close: 13 * 60 }, dinner: { open: 17 * 60, close: 22.5 * 60 } }, // Tuesday
-        3: { breakfast: { open: 7 * 60, close: 13 * 60 }, dinner: { open: 17 * 60, close: 22.5 * 60 } }, // Wednesday
-        4: { breakfast: { open: 7 * 60, close: 13 * 60 }, dinner: { open: 17 * 60, close: 22.5 * 60 } }, // Thursday
-        5: { breakfast: { open: 7 * 60, close: 13 * 60 }, dinner: { open: 17 * 60, close: 22.5 * 60 } }, // Friday
-        6: { breakfast: { open: 7 * 60, close: 13 * 60 }, dinner: { open: 15 * 60, close: 22.5 * 60 } }, // Saturday
-        0: { breakfast: { open: 7 * 60, close: 13 * 60 }, dinner: { open: 15 * 60, close: 22.5 * 60 } }  // Sunday
+        1: { breakfast: { open: 8 * 60, close: 15 * 60 }, dinner: null }, // Monday: Breakfast only
+        2: { breakfast: { open: 8 * 60, close: 15 * 60 }, dinner: { open: 17 * 60, close: 22.5 * 60 } }, // Tuesday
+        3: { breakfast: { open: 8 * 60, close: 15 * 60 }, dinner: { open: 17 * 60, close: 22.5 * 60 } }, // Wednesday
+        4: { breakfast: { open: 8 * 60, close: 15 * 60 }, dinner: { open: 17 * 60, close: 22.5 * 60 } }, // Thursday
+        5: { breakfast: { open: 8 * 60, close: 15 * 60 }, dinner: { open: 17 * 60, close: 22.5 * 60 } }, // Friday
+        6: { breakfast: { open: 8 * 60, close: 15 * 60 }, dinner: { open: 15 * 60, close: 22.5 * 60 } }, // Saturday
+        0: { breakfast: { open: 8 * 60, close: 15 * 60 }, dinner: { open: 15 * 60, close: 22.5 * 60 } }  // Sunday
     };
     
     const todayHours = hours[day];
