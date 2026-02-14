@@ -98,8 +98,8 @@ function updateOpeningStatus() {
     // Restaurant hours (in minutes from midnight)
     const hours = {
         // Breakfast: 8:00 AM - 3:00 PM (Daily)
-        // Dinner: Mon-Closed, Tue-Fri: 5:00 PM - 10:30 PM, Sat-Sun: 3:00 PM - 10:30 PM
-        1: { breakfast: { open: 8 * 60, close: 15 * 60 }, dinner: null }, // Monday: Breakfast only
+        // Dinner: Mon-Fri: 5:00 PM - 10:30 PM, Sat-Sun: 3:00 PM - 10:30 PM
+        1: { breakfast: { open: 8 * 60, close: 15 * 60 }, dinner: { open: 17 * 60, close: 22.5 * 60 } }, // Monday
         2: { breakfast: { open: 8 * 60, close: 15 * 60 }, dinner: { open: 17 * 60, close: 22.5 * 60 } }, // Tuesday
         3: { breakfast: { open: 8 * 60, close: 15 * 60 }, dinner: { open: 17 * 60, close: 22.5 * 60 } }, // Wednesday
         4: { breakfast: { open: 8 * 60, close: 15 * 60 }, dinner: { open: 17 * 60, close: 22.5 * 60 } }, // Thursday

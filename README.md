@@ -16,10 +16,10 @@ A modern and sleek website for Sanskrit Indian Restaurant featuring authentic So
 - **Combo Items**: Properly structured nested menu options for curry varieties
 
 ### Menu Categories
-- **Main Menu**: Complete dinner menu with starters, curries, rice, sides, breads, and desserts
+- **Dinner Menu**: Complete dinner menu with starters, curries, rice, sides, breads, and desserts
 - **Breakfast Menu**: Authentic South Indian breakfast (8am-3pm) with dosas, idlis, vadas, and rice dishes
 - **Drinks Menu**: Traditional and modern beverage options
-- **Happy Hour**: £10-£15 complete meal deals (weekday evenings only) featuring curry, sides & optional starters
+- **Happy Hour**: £12.95-£18.95 complete meal deals (weekday evenings only) featuring curry, sides & optional starters
 
 ### Filtering Options
 - **Dietary**: Vegan, Vegetarian, Gluten-Free options
@@ -39,7 +39,7 @@ A modern and sleek website for Sanskrit Indian Restaurant featuring authentic So
 ```
 sanskrit/
 ├── index.html              # Homepage with hero section
-├── menu-tabs.html          # Main tabbed menu interface
+├── menus.html          # Main tabbed menu interface
 ├── about.html              # Restaurant information
 ├── contact.html            # Contact form and details
 ├── css/
@@ -67,7 +67,7 @@ sanskrit/
 - **House Specials**: Including the famous Veg Thali
 - **Authentic Drinks**: Filter coffee, masala chai, and traditional beverages
 
-### Main Menu Features
+### Dinner Menu Features
 - **Restructured Combos**: Individual curry options (Signature, Jalfrezi, Balti, etc.)
 - **Complete Categories**: All missing items added from PDF menus
 - **Proper Dietary Tags**: Accurate vegan/vegetarian classifications
@@ -84,7 +84,7 @@ sanskrit/
 ## 📱 Usage
 
 1. **Homepage**: Welcome section with navigation to different areas
-2. **Menu Navigation**: Use floating nav or main menu to access different sections
+2. **Menu Navigation**: Use floating nav or dinner menu to access different sections
 3. **Filtering**: Use dietary and spice filters to find suitable options
 4. **Menu Browsing**: Switch between tabs for different meal times
 5. **Contact**: Get in touch using the contact form

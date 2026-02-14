@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Sanskrit Restaurant | Happy Hour Menu | Newcastle Indian Food</title>
+    <meta name="description" content="Explore Sanskrit Restaurant's authentic Indian menu featuring our popular Happy Hour deals from £12.95pp weekdays evenings. Traditional curries, breakfast, vegan options & more in Newcastle.">
+    <meta name="keywords" content="Sanskrit Restaurant menu, Happy Hour deals Newcastle, Indian food £12.95, weekday curry offers, authentic Indian restaurant Newcastle, vegan curry options">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Custom styles for menus.html floating header -->
+    <style>
+        /* Floating hamburger menu styles */
+        .floating-menu {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 50px;
+            padding: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .floating-menu.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .floating-hamburger {
+            display: flex;
+            flex-direction: column;
+            width: 25px;
+            height: 20px;
+            cursor: pointer;
+            justify-content: space-between;
+        }
+        
+        .floating-hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: #d4af37;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .floating-hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .floating-hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .floating-hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        .floating-nav-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 10px;
+            min-width: 200px;
+            transform: translateY(-20px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .floating-nav-menu.show {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .floating-nav-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            transition: color 0.3s ease;
+        }
+        
+        .floating-nav-menu a:last-child {
+            border-bottom: none;
+        }
+        
+        .floating-nav-menu a:hover {
+            color: #d4af37;
+        }
+        
+        /* Hide original navbar when floating menu is active */
+        .navbar.hidden {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        /* Ensure menu tabs section has proper spacing when navbar is hidden */
+        .menu-tabs-section {
+            transition: padding-top 0.3s ease;
+        }
+        
+        .menu-tabs-section.navbar-hidden {
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/logo-white-text.png" alt="Sanskrit Restaurant" class="logo-img">
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="menus.html" class="nav-link">Menus <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="menus.html">All Menus</a>
+                        <a href="menus.html#dinner">Dinner</a>
+                        <a href="menus.html#drinks">Drinks</a>
+                        <a href="menus.html#breakfast">Breakfast</a>
+                        <a href="menus.html#happy-hour">Happy Hour</a>
+                        <a href="catering-menu.html">Catering</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="https://sanskritrestaurant.com/book-table" class="nav-link">Book Table</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://sanskritrestaurant.com" class="nav-link">Order Now</a>
+                </li>
+                <li class="nav-item">
+                    <a href="locations.html" class="nav-link">Our Locations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </li>
+            </ul>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floating Navigation Menu (menus.html only) -->
+    <div class="floating-menu" id="floating-menu">
+        <div class="floating-hamburger" id="floating-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="floating-nav-menu" id="floating-nav-menu">
+            <a href="index.html">Home</a>
+            <a href="menus.html">All Menus</a>
+            <a href="https://sanskritrestaurant.com/book-table">Book Table</a>
+            <a href="about.html">About</a>
+            <a href="locations.html">Our Locations</a>
+        </div>
+    </div>
+
+    <!-- Menu Tabs -->
+    <script src="js/script.js"></script>
+    <script src="js/menu-tabs.js"></script>
+    <script>
+        function openMenu(pdfFile) {
+            document.getElementById("pdfEmbed").src = pdfFile;
+            document.getElementById("pdfViewer").style.display = "block";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            // Extract hash without the #
+            const hash = window.location.hash.replace("#", "").toLowerCase();
+
+            // All valid menu anchors
+            const validTabs = ["breakfast", "dinner", "happy-hour", "drinks"];
+
+            // Determine which tab to activate
+            const targetTab = validTabs.includes(hash) ? hash : "dinner";
+
+            // Find the matching button
+            const btn = document.querySelector(`[data-tab="${targetTab}"]`);
+
+            // Trigger the click if found
+            if (btn) btn.click();
+        });
+    </script>
+    <section class="menu-tabs-section">
+        <div class="container" style="max-width: 90%;">
+            <div class="tabs-container" style="max-width: 90%;">
+                <div class="tab-buttons">
+                    <button class="tab-btn" data-tab="dinner" onclick="openMenu('assets/menus/dinner-menu.pdf')">Dinner</button>
+                    <button class="tab-btn" data-tab="happy-hour" onclick="openMenu('assets/menus/happy-hour-menu.pdf')">Happy Hour</button>
+                    <button class="tab-btn" data-tab="drinks" onclick="openMenu('assets/menus/drinks-menu.pdf')">Drinks</button>
+                    <button class="tab-btn" data-tab="breakfast" onclick="openMenu('assets/menus/breakfast-menu.pdf')">Breakfast</button>
+                </div>
+
+                <!-- Menu Tab Content -->
+                <div id="pdfViewer" style="display:none; margin-top:20px;">
+                    <embed id="pdfEmbed" src="" type="application/pdf" width="100%" height="600px">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="assets/logo-white-text.png" alt="Sanskrit Restaurant Newcastle - Best Indian Food" class="footer-logo">
+                    <p>Newcastle's newest Indian restaurant (Est. May 2024) famous for Sanskrit Signature & Blimey Butter Chicken curry. Level 3/2 certified chefs serving authentic Indian cuisine.</p>
+                    <p><strong>Proud sponsors of Backworth Cricket Club, Lions Cricket Club and many other organisations</strong></p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/sanskritnewcastle" target="_blank" aria-label="Follow Sanskrit Restaurant Newcastle on Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/sanskritnewcastle" target="_blank" aria-label="Follow Sanskrit Restaurant Newcastle on Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menus.html">Menus</a></li>
+                        <li><a href="https://sanskritrestaurant.com/book-table">Book Table</a></li>
+                        <li><a href="https://sanskritrestaurant.com">Order Now</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="locations.html">Our Locations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 391 Benton Park Road, Newcastle, NE7 7EE</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+441916594072">0191 659 4072</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:admin@sanskritrestaurant.uk">admin@sanskritrestaurant.uk</a></p>
+                    <p><i class="fas fa-globe"></i> Serving Newcastle, Gosforth, Heaton, Cramlington, Killingworth, Jesmond & surrounding areas</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Opening Hours</h4>
+                    <p><strong>Breakfast (Daily):</strong> 8:00 AM - 3:00 PM</p>
+                    <p><strong>Dinner:</strong></p>
+                    <p>Mon-Fri: 5:00 PM - 10:30 PM</p>
+                    <p>Sat-Sun: 3:00 PM - 10:30 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sanskrit Restaurant Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating menu functionality (menus.html only) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('navbar');
+            const floatingMenu = document.getElementById('floating-menu');
+            const floatingHamburger = document.getElementById('floating-hamburger');
+            const floatingNavMenu = document.getElementById('floating-nav-menu');
+            const menuTabsSection = document.querySelector('.menu-tabs-section');
+            
+            let lastScrollTop = 0;
+            let isFloatingMenuVisible = false;
+            
+            // Handle scroll events
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // Show floating menu when scrolling down after 100px
+                if (scrollTop > 100 && scrollTop > lastScrollTop) {
+                    // Scrolling down
+                    if (!isFloatingMenuVisible) {
+                        navbar.classList.add('hidden');
+                        floatingMenu.classList.add('show');
+                        menuTabsSection.classList.add('navbar-hidden');
+                        isFloatingMenuVisible = true;
+                    }
+                } else if (scrollTop <= 100) {
+                    // At top of page
+                    navbar.classList.remove('hidden');
+                    floatingMenu.classList.remove('show');
+                    menuTabsSection.classList.remove('navbar-hidden');
+                    isFloatingMenuVisible = false;
+                    
+                    // Close floating menu if open
+                    floatingHamburger.classList.remove('active');
+                    floatingNavMenu.classList.remove('show');
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+            
+            // Handle floating hamburger click
+            floatingHamburger.addEventListener('click', function() {
+                floatingHamburger.classList.toggle('active');
+                floatingNavMenu.classList.toggle('show');
+            });
+            
+            // Close floating menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!floatingMenu.contains(event.target)) {
+                    floatingHamburger.classList.remove('active');
+                    floatingNavMenu.classList.remove('show');
+                }
+            });
+            
+            // Close floating menu when clicking on a menu item
+            const floatingMenuLinks = floatingNavMenu.querySelectorAll('a');
+            floatingMenuLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    floatingHamburger.classList.remove('active');
+                    floatingNavMenu.classList.remove('show');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
